@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f74df35cc3be2084f8325821e3127c86
+timeCreated: 1475504996
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 72891
+  packageName: Low Poly Medieval Weapons Pack
+  packageVersion: 1.0
+  assetPath: Assets/LowPolyMedievalPack/Prefabs/Hammer.prefab
+  uploadId: 139997

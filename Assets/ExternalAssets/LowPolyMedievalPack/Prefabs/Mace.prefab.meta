@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 117e7d0bbafc64445bc82a0aca3d4d89
+timeCreated: 1475505070
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 72891
+  packageName: Low Poly Medieval Weapons Pack
+  packageVersion: 1.0
+  assetPath: Assets/LowPolyMedievalPack/Prefabs/Mace.prefab
+  uploadId: 139997

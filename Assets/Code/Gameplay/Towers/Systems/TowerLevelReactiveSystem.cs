@@ -1,0 +1,35 @@
+﻿using System.Collections.Generic;
+using Code.Infrastructure.StaticData;
+using Entitas;
+
+namespace Code.Gameplay.Towers.Systems
+{
+    public class TowerLevelReactiveSystem : ReactiveSystem<GameEntity>
+    {
+        private readonly CommonStaticData _commonStaticData;
+
+        public TowerLevelReactiveSystem(IContext<GameEntity> context, CommonStaticData commonStaticData) : base(context)
+        {
+            _commonStaticData = commonStaticData;
+        }
+
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
+            context.CreateCollector(GameMatcher.TowerScore);
+
+        protected override bool Filter(GameEntity entity) =>
+            true;
+
+        protected override void Execute(List<GameEntity> entities)
+        {
+            foreach (GameEntity entity in entities)
+            {
+                if (entity.towerScore.Value <=  _commonStaticData.scoreFromZeroToFirstLevel)
+                    entity.ReplaceTowerLevel(0);
+                if (entity.towerScore.Value > _commonStaticData.scoreFromZeroToFirstLevel)
+                    entity.ReplaceTowerLevel(1);
+                if (entity.towerScore.Value > _commonStaticData.scoreFromFirstToSecondLevel)
+                    entity.ReplaceTowerLevel(2);
+            }
+        }
+    }
+}

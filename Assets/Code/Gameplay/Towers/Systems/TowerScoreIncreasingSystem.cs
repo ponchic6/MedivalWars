@@ -1,0 +1,41 @@
+﻿using Code.Infrastructure.StaticData;
+using Entitas;
+using UnityEngine;
+
+namespace Code.Gameplay.Towers.Systems
+{
+    public class TowerScoreIncreasingSystem : IExecuteSystem
+    {
+        private readonly CommonStaticData _commonStaticData;
+        private readonly GameContext _game;
+        private readonly IGroup<GameEntity> _entities;
+
+        public TowerScoreIncreasingSystem(CommonStaticData commonStaticData)
+        {
+            _commonStaticData = commonStaticData;
+            _game = Contexts.sharedInstance.game;
+
+            _entities = _game.GetGroup(GameMatcher.TowerScore);
+        }
+        
+        public void Execute()
+        {
+            foreach (GameEntity entity in _entities)
+            {
+                if (entity.towerFraction.Value == TowerFractionsEnum.Neutral)
+                    continue;
+                
+                if (entity.towerScoreIncreasingCooldown.Value <= 0)
+                {
+                    if (entity.towerRouteIdList.Value.Count != 0)
+                        continue;
+                    
+                    entity.ReplaceTowerScoreIncreasingCooldown(_commonStaticData.towerScoreIncreasingCooldown);
+                    entity.ReplaceTowerScore(entity.towerScore.Value + 1);
+                }
+                
+                entity.towerScoreIncreasingCooldown.Value -= Time.deltaTime;
+            }
+        }
+    }
+}

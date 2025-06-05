@@ -1,0 +1,59 @@
+﻿using Code.Gameplay.Towers;
+using Code.Infrastructure.View;
+using Entitas;
+using UnityEngine;
+
+namespace Code.Gameplay.Routes.Systems
+{
+    public class RouteDestructMarkerBySwapSystem : IExecuteSystem
+    {
+        private readonly GameContext _game;
+        private readonly IGroup<GameEntity> _entities;
+
+        public RouteDestructMarkerBySwapSystem()
+        {
+            _game = Contexts.sharedInstance.game;
+
+            _entities = _game.GetGroup(GameMatcher.LeftMouseButtonHold);
+        }
+
+        public void Execute()
+        {
+            foreach (GameEntity entity in _entities)
+            {
+                IGroup<GameEntity> notCompletedRoutes = _game.GetGroup(GameMatcher.AllOf(GameMatcher.RouteStartId).NoneOf(GameMatcher.RouteFinishId));
+       
+                if (notCompletedRoutes.count != 0)
+                    continue;
+
+                Ray ray = Camera.main.ScreenPointToRay(UnityEngine.Input.mousePosition);
+
+                RaycastHit[] hits = Physics.RaycastAll(ray);
+       
+                if (hits.Length == 0)
+                    continue;
+
+                foreach (RaycastHit hit in hits)
+                {
+                    if (!hit.collider.GetComponentInParent<LineRenderer>())
+                        continue;
+           
+                    EntityBehaviour entityBehaviour = hit.collider.GetComponentInParent<EntityBehaviour>();
+                    if (!entityBehaviour) 
+                        continue;
+           
+                    if (!entityBehaviour.Entity.isRoute)
+                        continue;
+
+                    GameEntity startTowerEntity = _game.GetEntityWithId(entityBehaviour.Entity.routeStartId.Value);
+           
+                    if (startTowerEntity.towerFraction.Value == TowerFractionsEnum.Blue)
+                    {
+                        entityBehaviour.Entity.isDestructed = true;
+                        return;
+                    }
+                }
+            }
+        }    
+    }
+}
