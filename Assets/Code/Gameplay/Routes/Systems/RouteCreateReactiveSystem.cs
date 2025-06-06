@@ -55,8 +55,8 @@ namespace Code.Gameplay.Routes.Systems
             foreach (GameEntity entity in routesWithoutFinish.GetEntities())
             {
                 start.towerRouteIdList.Value.Add(entity.id.Value);
-                start.ReplaceUsedRouteCount(start.usedRouteCount.Value + 1);
                 start.ReplaceTowerRouteIdList(start.towerRouteIdList.Value);
+                start.ReplaceUsedRouteCount(start.usedRouteCount.Value + 1);
                 entity.AddRouteFinishId(finish.id.Value);
                 entity.lineRenderer.Value.SetPosition(1, finish.transform.Value.position + Vector3.up * _commonStaticData.verticalRouteOffset);
                 entity.AddRouteDistance(Vector3.Distance(start.transform.Value.transform.position, finish.transform.Value.transform.position));
