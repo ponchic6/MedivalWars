@@ -7,6 +7,8 @@ namespace Code.Gameplay.Towers.Systems
     {
         public TowerFeature(ISystemFactory systemFactory)
         {
+            Add(systemFactory.Create <TowerLevelInitializeSystem>());
+            
             Add(systemFactory.Create<TowerScoreIncreasingSystem>());
             Add(systemFactory.Create<TowerSoldierCreationCooldownSystem>());
 

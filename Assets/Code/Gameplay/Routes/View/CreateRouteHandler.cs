@@ -1,4 +1,5 @@
 using Code.Gameplay.Routes.Services;
+using Code.Gameplay.Towers;
 using Code.Gameplay.Towers.View;
 using Code.Infrastructure.View;
 using Entitas;
@@ -33,6 +34,9 @@ namespace Code.Gameplay.Routes.View
         private void MarkAsStartPoint(PointerEventData eventData)
         {
             if (eventData.button != PointerEventData.InputButton.Left)
+                return;
+            
+            if (_entityBehaviour.Entity.towerFraction.Value != TowerFractionsEnum.Blue)
                 return;
             
             _entityBehaviour.Entity.isStartTowerRoutesPoint = true;

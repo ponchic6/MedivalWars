@@ -18,5 +18,6 @@ namespace Code.Infrastructure.StaticData
         public float soldierMoveSpeed;
         public float towerScoreIncreasingCooldown;
         public float verticalRouteOffset;
+        public float enemyActionCooldown;
     }
 }

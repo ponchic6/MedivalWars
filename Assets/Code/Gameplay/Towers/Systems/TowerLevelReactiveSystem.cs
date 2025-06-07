@@ -23,11 +23,11 @@ namespace Code.Gameplay.Towers.Systems
         {
             foreach (GameEntity entity in entities)
             {
-                if (entity.towerScore.Value <=  _commonStaticData.scoreFromZeroToFirstLevel)
+                if (entity.towerScore.Value <= _commonStaticData.scoreFromZeroToFirstLevel && entity.towerLevel.Value != 0)
                     entity.ReplaceTowerLevel(0);
-                if (entity.towerScore.Value > _commonStaticData.scoreFromZeroToFirstLevel)
+                if (entity.towerScore.Value > _commonStaticData.scoreFromZeroToFirstLevel && entity.towerLevel.Value != 1)
                     entity.ReplaceTowerLevel(1);
-                if (entity.towerScore.Value > _commonStaticData.scoreFromFirstToSecondLevel)
+                if (entity.towerScore.Value > _commonStaticData.scoreFromFirstToSecondLevel && entity.towerLevel.Value != 2)
                     entity.ReplaceTowerLevel(2);
             }
         }

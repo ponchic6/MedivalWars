@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf048ef284704ebe866ef0b8f9b7b211, type: 3}
   m_Name: CommonStaticData
   m_EditorClassIdentifier: 
+  scoreFromZeroToFirstLevel: 15
+  scoreFromFirstToSecondLevel: 30
   towerPrefab: {fileID: 4665519136035442161, guid: 3104166061015a34e936e711bf8f9066, type: 3}
   routePrefab: {fileID: -7642511565061890827, guid: e8186384c02063d488ab5c43a99cd4b1, type: 3}
   blueSoldierPrefab: {fileID: -9052834212735386466, guid: 905ff5786460de946b847179a8d70ecd, type: 3}
@@ -21,6 +23,5 @@ MonoBehaviour:
   soldierCreationCooldownSecondLevel: 1
   soldierMoveSpeed: 1
   towerScoreIncreasingCooldown: 2
-  scoreFromZeroToFirstLevel: 15
-  scoreFromFirstToSecondLevel: 30
   verticalRouteOffset: 0.1
+  enemyActionCooldown: 1

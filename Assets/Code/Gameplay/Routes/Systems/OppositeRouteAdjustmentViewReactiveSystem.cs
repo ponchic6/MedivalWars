@@ -14,10 +14,10 @@ namespace Code.Gameplay.Routes.Systems
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
-            context.CreateCollector(GameMatcher.RouteFinishId.Added());
+            context.CreateCollector(GameMatcher.RouteDistance.Added());
 
         protected override bool Filter(GameEntity entity) =>
-            true;
+            entity.isRoute;
 
         protected override void Execute(List<GameEntity> entities)
         {
@@ -31,7 +31,7 @@ namespace Code.Gameplay.Routes.Systems
                 
                 GameEntity startTowerOfNewRoute = _game.GetEntityWithId(startId);
                 GameEntity startTowerOfCompletedRoute = _game.GetEntityWithId(oppositeRoute.routeStartId.Value);
-                
+
                 if (startTowerOfCompletedRoute.towerFraction.Value == startTowerOfNewRoute.towerFraction.Value)
                     oppositeRoute.isDestructed = true;
                 else

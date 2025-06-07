@@ -1,5 +1,6 @@
 using Code.Infrastructure.Services;
 using Code.Infrastructure.StaticData;
+using UnityEngine;
 
 namespace Code.Gameplay.Routes.Services
 {
@@ -23,6 +24,19 @@ namespace Code.Gameplay.Routes.Services
             route.isRoute = true;
             route.AddViewPrefab(_commonStaticData.routePrefab);
             route.AddRouteStartId(start.id.Value);
+        }
+
+        public void CreateRoute(GameEntity start, GameEntity end)
+        {
+            GameEntity route = _game.CreateEntity();
+            route.AddId(_identifierService.Next());
+            route.isRoute = true;
+            route.AddViewPrefab(_commonStaticData.routePrefab);
+            route.AddRouteStartId(start.id.Value);
+            route.AddRouteFinishId(end.id.Value);
+            start.towerRouteIdList.Value.Add(route.id.Value);
+            start.ReplaceTowerRouteIdList(start.towerRouteIdList.Value);
+            start.ReplaceUsedRouteCount(start.usedRouteCount.Value + 1);
         }
     }
 }

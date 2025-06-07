@@ -25,7 +25,6 @@ namespace Code.Gameplay.Map.Systems
             CreateTower(Vector3.zero + Vector3.left * 0.5f + Vector3.back * 0.5f, TowerFractionsEnum.Blue, 5);
             CreateTower(Vector3.zero + Vector3.right * 0.5f + Vector3.back * 0.5f, TowerFractionsEnum.Blue, 8);
             CreateTower(Vector3.zero + Vector3.left * 0.5f + Vector3.forward * 0.5f, TowerFractionsEnum.Red, 17);
-            CreateTower(Vector3.zero + Vector3.right * 0.5f + Vector3.forward * 0.5f, TowerFractionsEnum.Neutral, 2);
         }
 
         private void CreateTower(Vector3 startPos, TowerFractionsEnum fraction, int initialTowerScore)

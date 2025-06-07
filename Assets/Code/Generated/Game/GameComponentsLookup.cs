@@ -11,44 +11,48 @@ public static class GameComponentsLookup {
     public const int Id = 0;
     public const int LineRenderer = 1;
     public const int Transform = 2;
-    public const int Input = 3;
-    public const int LeftMouseButtonHold = 4;
-    public const int RightMouseButtonHold = 5;
-    public const int FinishTowerRoutesPoint = 6;
-    public const int Route = 7;
-    public const int RouteDistance = 8;
-    public const int RouteFinishId = 9;
-    public const int RoutesColorController = 10;
-    public const int RouteStartId = 11;
-    public const int StartTowerRoutesPoint = 12;
-    public const int SoldierAttackTowerId = 13;
-    public const int SoldierTowerOfBirthId = 14;
-    public const int MaxRouteCount = 15;
-    public const int ReadyToCreateSoldier = 16;
-    public const int SoldierCreationCooldown = 17;
-    public const int Tower = 18;
-    public const int TowerFraction = 19;
-    public const int TowerFractionColorController = 20;
-    public const int TowerLevel = 21;
-    public const int TowerLevelViewController = 22;
-    public const int TowerRouteIdList = 23;
-    public const int TowerScore = 24;
-    public const int TowerScoreIncreasingCooldown = 25;
-    public const int TowerUiView = 26;
-    public const int UsedRouteCount = 27;
-    public const int Destructed = 28;
-    public const int InitialTransform = 29;
-    public const int View = 30;
-    public const int ViewPath = 31;
-    public const int ViewPrefab = 32;
-    public const int ViewPrefabWithParent = 33;
+    public const int EnemyActionCooldown = 3;
+    public const int EnemyReadyToAction = 4;
+    public const int Input = 5;
+    public const int LeftMouseButtonHold = 6;
+    public const int RightMouseButtonHold = 7;
+    public const int FinishTowerRoutesPoint = 8;
+    public const int Route = 9;
+    public const int RouteDistance = 10;
+    public const int RouteFinishId = 11;
+    public const int RoutesColorController = 12;
+    public const int RouteStartId = 13;
+    public const int StartTowerRoutesPoint = 14;
+    public const int SoldierAttackTowerId = 15;
+    public const int SoldierTowerOfBirthId = 16;
+    public const int MaxRouteCount = 17;
+    public const int ReadyToCreateSoldier = 18;
+    public const int SoldierCreationCooldown = 19;
+    public const int Tower = 20;
+    public const int TowerFraction = 21;
+    public const int TowerFractionColorController = 22;
+    public const int TowerLevel = 23;
+    public const int TowerLevelViewController = 24;
+    public const int TowerRouteIdList = 25;
+    public const int TowerScore = 26;
+    public const int TowerScoreIncreasingCooldown = 27;
+    public const int TowerUiView = 28;
+    public const int UsedRouteCount = 29;
+    public const int Destructed = 30;
+    public const int InitialTransform = 31;
+    public const int View = 32;
+    public const int ViewPath = 33;
+    public const int ViewPrefab = 34;
+    public const int ViewPrefabWithParent = 35;
 
-    public const int TotalComponents = 34;
+    public const int TotalComponents = 36;
 
     public static readonly string[] componentNames = {
         "Id",
         "LineRenderer",
         "Transform",
+        "EnemyActionCooldown",
+        "EnemyReadyToAction",
         "Input",
         "LeftMouseButtonHold",
         "RightMouseButtonHold",
@@ -86,6 +90,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.LineRendererComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
+        typeof(Code.Gameplay.EnemyAi.EnemyActionCooldown),
+        typeof(Code.Gameplay.EnemyAi.EnemyReadyToAction),
         typeof(Code.Gameplay.Input.Input),
         typeof(Code.Gameplay.Input.LeftMouseButtonHold),
         typeof(Code.Gameplay.Input.RightMouseButtonHold),

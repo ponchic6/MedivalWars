@@ -13,7 +13,7 @@ namespace Code.Gameplay.Routes.Systems
             Add(systemFactory.Create<RoutePaintReactiveSystem>());
             Add(systemFactory.Create<OppositeRouteAdjustmentViewReactiveSystem>());
             Add(systemFactory.Create<RouteByDestructAdjustmentViewReactiveSystem>());
-            Add(systemFactory.Create<RouteDestructByLevelDecreaseReactiveSystem>());
+            Add(systemFactory.Create<RouteAdjustMaxRouteByLevelDecreaseReactiveSystem>());
             Add(systemFactory.Create<RouteIdListUpdateReactiveSystem>());
             Add(systemFactory.Create<RouteMaxCountViewReactiveSystem>());
             Add(systemFactory.Create<RouteUsedCountViewReactiveSystem>());

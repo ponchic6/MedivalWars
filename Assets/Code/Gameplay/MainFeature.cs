@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Input.Systems;
+﻿using Code.Gameplay.EnemyAi.System;
+using Code.Gameplay.Input.Systems;
 using Code.Gameplay.Map.Systems;
 using Code.Gameplay.Routes.Systems;
 using Code.Gameplay.Soldiers.Systems;
@@ -16,6 +17,7 @@ namespace Code.Gameplay
             Add(systemFactory.Create<ViewFeature>());
             Add(systemFactory.Create<InputFeature>());
             Add(systemFactory.Create<MapFeature>());
+            Add(systemFactory.Create<EnemyAiFeature>());
             Add(systemFactory.Create<TowerFeature>());
             Add(systemFactory.Create<RoutesFeature>());
             Add(systemFactory.Create<SoldiersFeature>());
