@@ -11,6 +11,11 @@ namespace Code.Gameplay.Towers
     [Game] public class TowerLevel : IComponent { public int Value; }
     [Game] public class TowerRouteIdList : IComponent { public List<int> Value; }
     [Game] public class Tower : IComponent { }
+    [Game] public class Catapult : IComponent { }
+    [Game] public class Projectile : IComponent { }
+    [Game] public class ProjectileTargetId : IComponent { public int Value; }
+    [Game] public class ReadyToShooting : IComponent { }
+    [Game] public class CatapultShootingCooldownComponent : IComponent { public float Value; }
     [Game] public class TowerFraction : IComponent { public TowerFractionsEnum Value; }
     [Game] public class TowerFractionColorControllerComponent : IComponent { public TowerColorController Value; }
     [Game] public class TowerLevelViewControllerComponent : IComponent { public TowerLevelViewController Value; }

@@ -4,18 +4,18 @@ using UnityEngine;
 
 namespace Code.Gameplay.Towers.Systems
 {
-    public class TowerScoreIncreasingSystem : IExecuteSystem
+    public class TowerScorePassiveIncreasingSystem : IExecuteSystem
     {
         private readonly CommonStaticData _commonStaticData;
         private readonly GameContext _game;
         private readonly IGroup<GameEntity> _entities;
 
-        public TowerScoreIncreasingSystem(CommonStaticData commonStaticData)
+        public TowerScorePassiveIncreasingSystem(CommonStaticData commonStaticData)
         {
-            _commonStaticData = commonStaticData;
             _game = Contexts.sharedInstance.game;
+            _commonStaticData = commonStaticData;
 
-            _entities = _game.GetGroup(GameMatcher.TowerScore);
+            _entities = _game.GetGroup(GameMatcher.AllOf(GameMatcher.TowerScore).NoneOf(GameMatcher.Catapult));
         }
         
         public void Execute()
@@ -28,6 +28,9 @@ namespace Code.Gameplay.Towers.Systems
                 if (entity.towerScoreIncreasingCooldown.Value <= 0)
                 {
                     if (entity.towerRouteIdList.Value.Count != 0)
+                        continue;
+                    
+                    if (entity.towerScore.Value >= _commonStaticData.maxScore)
                         continue;
                     
                     entity.ReplaceTowerScoreIncreasingCooldown(_commonStaticData.towerScoreIncreasingCooldown);

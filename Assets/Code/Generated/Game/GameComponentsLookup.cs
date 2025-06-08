@@ -20,32 +20,39 @@ public static class GameComponentsLookup {
     public const int Route = 9;
     public const int RouteDistance = 10;
     public const int RouteFinishId = 11;
-    public const int RoutesColorController = 12;
-    public const int RouteStartId = 13;
-    public const int StartTowerRoutesPoint = 14;
-    public const int SoldierAttackTowerId = 15;
-    public const int SoldierTowerOfBirthId = 16;
-    public const int MaxRouteCount = 17;
-    public const int ReadyToCreateSoldier = 18;
-    public const int SoldierCreationCooldown = 19;
-    public const int Tower = 20;
-    public const int TowerFraction = 21;
-    public const int TowerFractionColorController = 22;
-    public const int TowerLevel = 23;
-    public const int TowerLevelViewController = 24;
-    public const int TowerRouteIdList = 25;
-    public const int TowerScore = 26;
-    public const int TowerScoreIncreasingCooldown = 27;
-    public const int TowerUiView = 28;
-    public const int UsedRouteCount = 29;
-    public const int Destructed = 30;
-    public const int InitialTransform = 31;
-    public const int View = 32;
-    public const int ViewPath = 33;
-    public const int ViewPrefab = 34;
-    public const int ViewPrefabWithParent = 35;
+    public const int RouteIntersectingObstacle = 12;
+    public const int RouteReady = 13;
+    public const int RoutesColorController = 14;
+    public const int RouteStartId = 15;
+    public const int StartTowerRoutesPoint = 16;
+    public const int SoldierAttackTowerId = 17;
+    public const int SoldierTowerOfBirthId = 18;
+    public const int Catapult = 19;
+    public const int CatapultShootingCooldown = 20;
+    public const int MaxRouteCount = 21;
+    public const int Projectile = 22;
+    public const int ProjectileTargetId = 23;
+    public const int ReadyToCreateSoldier = 24;
+    public const int ReadyToShooting = 25;
+    public const int SoldierCreationCooldown = 26;
+    public const int Tower = 27;
+    public const int TowerFraction = 28;
+    public const int TowerFractionColorController = 29;
+    public const int TowerLevel = 30;
+    public const int TowerLevelViewController = 31;
+    public const int TowerRouteIdList = 32;
+    public const int TowerScore = 33;
+    public const int TowerScoreIncreasingCooldown = 34;
+    public const int TowerUiView = 35;
+    public const int UsedRouteCount = 36;
+    public const int Destructed = 37;
+    public const int InitialTransform = 38;
+    public const int View = 39;
+    public const int ViewPath = 40;
+    public const int ViewPrefab = 41;
+    public const int ViewPrefabWithParent = 42;
 
-    public const int TotalComponents = 36;
+    public const int TotalComponents = 43;
 
     public static readonly string[] componentNames = {
         "Id",
@@ -60,13 +67,20 @@ public static class GameComponentsLookup {
         "Route",
         "RouteDistance",
         "RouteFinishId",
+        "RouteIntersectingObstacle",
+        "RouteReady",
         "RoutesColorController",
         "RouteStartId",
         "StartTowerRoutesPoint",
         "SoldierAttackTowerId",
         "SoldierTowerOfBirthId",
+        "Catapult",
+        "CatapultShootingCooldown",
         "MaxRouteCount",
+        "Projectile",
+        "ProjectileTargetId",
         "ReadyToCreateSoldier",
+        "ReadyToShooting",
         "SoldierCreationCooldown",
         "Tower",
         "TowerFraction",
@@ -99,13 +113,20 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Routes.Route),
         typeof(Code.Gameplay.Routes.RouteDistance),
         typeof(Code.Gameplay.Routes.RouteFinishId),
+        typeof(Code.Gameplay.Routes.RouteIntersectingObstacle),
+        typeof(Code.Gameplay.Routes.RouteReady),
         typeof(Code.Gameplay.Routes.RoutesColorControllerComponent),
         typeof(Code.Gameplay.Routes.RouteStartId),
         typeof(Code.Gameplay.Routes.StartTowerRoutesPoint),
         typeof(Code.Gameplay.Soldiers.SoldierAttackTowerId),
         typeof(Code.Gameplay.Soldiers.SoldierTowerOfBirthId),
+        typeof(Code.Gameplay.Towers.Catapult),
+        typeof(Code.Gameplay.Towers.CatapultShootingCooldownComponent),
         typeof(Code.Gameplay.Towers.MaxRouteCount),
+        typeof(Code.Gameplay.Towers.Projectile),
+        typeof(Code.Gameplay.Towers.ProjectileTargetId),
         typeof(Code.Gameplay.Towers.ReadyToCreateSoldier),
+        typeof(Code.Gameplay.Towers.ReadyToShooting),
         typeof(Code.Gameplay.Towers.SoldierCreationCooldown),
         typeof(Code.Gameplay.Towers.Tower),
         typeof(Code.Gameplay.Towers.TowerFraction),

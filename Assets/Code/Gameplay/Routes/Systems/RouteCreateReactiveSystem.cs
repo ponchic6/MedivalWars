@@ -29,7 +29,7 @@ namespace Code.Gameplay.Routes.Systems
             if (!_game.isStartTowerRoutesPoint)
                 return;
             
-            if (!_game.isFinishTowerRoutesPoint)
+            if (!_game.isFinishTowerRoutesPoint || _game.isRouteIntersectingObstacle)
             {
                 RejectRouteBuilding(_game.startTowerRoutesPointEntity, routesWithoutFinish);
                 return;
@@ -60,6 +60,7 @@ namespace Code.Gameplay.Routes.Systems
                 entity.AddRouteFinishId(finish.id.Value);
                 entity.lineRenderer.Value.SetPosition(1, finish.transform.Value.position + Vector3.up * _commonStaticData.verticalRouteOffset);
                 entity.AddRouteDistance(Vector3.Distance(start.transform.Value.transform.position, finish.transform.Value.transform.position));
+                entity.isRouteReady = true;
                 AddRouteCollider(entity);
             }
         }

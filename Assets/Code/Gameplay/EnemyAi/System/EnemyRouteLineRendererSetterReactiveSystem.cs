@@ -38,7 +38,7 @@ namespace Code.Gameplay.EnemyAi.System
                 GameEntity end = _game.GetEntityWithId(entity.routeFinishId.Value);
                 entity.lineRenderer.Value.SetPosition(0, start.transform.Value.position + Vector3.up * _commonStaticData.verticalRouteOffset);
                 entity.lineRenderer.Value.SetPosition(1, end.transform.Value.position + Vector3.up * _commonStaticData.verticalRouteOffset);
-                entity.AddRouteDistance(Vector3.Distance(start.transform.Value.transform.position, end.transform.Value.transform.position));
+                entity.isRouteReady = true;
             }
         }
     }

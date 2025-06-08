@@ -13,7 +13,6 @@ namespace Code.Gameplay.Towers.View
         [SerializeField] private List<Transform> _redTowers;
         [SerializeField] private List<Transform> _neutralTowers;
         [SerializeField] private float _morphDuration;
-        [SerializeField] private float _scaleBounceDuration;
         [SerializeField] private Ease _morphEase;
         [SerializeField] private Ease _bounceEase;
         private int _currentTowerIndex;

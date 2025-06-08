@@ -24,6 +24,9 @@ namespace Code.Gameplay.Soldiers.Systems
             {
                 towerEntity.towerFractionColorController.Value.SetFractionColor(towerEntity.towerFraction.Value);
                 
+                if (towerEntity.isCatapult)
+                    continue;
+                
                 foreach (int routeId in towerEntity.towerRouteIdList.Value)
                     _game.GetEntityWithId(routeId).isDestructed = true;
             }

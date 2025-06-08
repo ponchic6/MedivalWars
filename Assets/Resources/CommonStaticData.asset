@@ -16,8 +16,10 @@ MonoBehaviour:
   scoreFromFirstToSecondLevel: 30
   towerPrefab: {fileID: 4665519136035442161, guid: 3104166061015a34e936e711bf8f9066, type: 3}
   routePrefab: {fileID: -7642511565061890827, guid: e8186384c02063d488ab5c43a99cd4b1, type: 3}
+  catapultPrefab: {fileID: 4665519136035442161, guid: 5ecd7320850f65b4c931dbfd6a393782, type: 3}
   blueSoldierPrefab: {fileID: -9052834212735386466, guid: 905ff5786460de946b847179a8d70ecd, type: 3}
   redSoldierPrefab: {fileID: -9052834212735386466, guid: eac44c53296c05c48b8d2f7161585d5d, type: 3}
+  projectilePrefab: {fileID: 6401979198727959464, guid: 4e94acc58d1f5dd4e890d37e0d85cbfe, type: 3}
   soldierCreationCooldownZeroLevel: 3
   soldierCreationCooldownFirstLevel: 2
   soldierCreationCooldownSecondLevel: 1
@@ -25,3 +27,11 @@ MonoBehaviour:
   towerScoreIncreasingCooldown: 2
   verticalRouteOffset: 0.1
   enemyActionCooldown: 1
+  catapultCooldownZeroLevel: 5
+  catapultCooldownFirstLevel: 4
+  catapultCooldownSecondLevel: 3
+  catapultRangeZeroLevel: 0.5
+  catapultRangeFirstLevel: 1
+  catapultRangeSecondLevel: 1.5
+  projectileSpeed: 4
+  maxScore: 45

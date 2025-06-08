@@ -14,7 +14,7 @@ namespace Code.Gameplay.Routes.Systems
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
-            context.CreateCollector(GameMatcher.RouteDistance.Added());
+            context.CreateCollector(GameMatcher.RouteReady.Added());
 
         protected override bool Filter(GameEntity entity) =>
             entity.isRoute;

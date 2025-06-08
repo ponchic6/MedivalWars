@@ -1,0 +1,25 @@
+﻿using Entitas;
+
+namespace Code.Gameplay.Towers.Systems
+{
+    public class ProjectileMoverSystem : IExecuteSystem
+    {
+        private readonly GameContext _game;
+        private readonly IGroup<GameEntity> _entities;
+
+        public ProjectileMoverSystem()
+        {
+            _game = Contexts.sharedInstance.game;
+
+            _entities = _game.GetGroup();
+        }
+
+        public void Execute()
+        {
+            foreach (GameEntity entity in _entities)
+            {
+                
+            }
+        }
+    }
+}

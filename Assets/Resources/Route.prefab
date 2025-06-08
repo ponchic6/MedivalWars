@@ -211,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _blueFraction: {r: 0.21462265, g: 0.5719812, b: 0.8584906, a: 1}
   _redFraction: {r: 1, g: 0.3254902, b: 0.3254902, a: 1}
+  _intersectingColor: {r: 0, g: 0, b: 0, a: 1}
   _lineRenderer: {fileID: 3441570858045126948}
 --- !u!114 &790691190912148513
 MonoBehaviour:

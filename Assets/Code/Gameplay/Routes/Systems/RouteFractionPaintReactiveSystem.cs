@@ -3,11 +3,11 @@ using Entitas;
 
 namespace Code.Gameplay.Routes.Systems
 {
-    public class RoutePaintReactiveSystem : ReactiveSystem<GameEntity>
+    public class RouteFractionPaintReactiveSystem : ReactiveSystem<GameEntity>
     {
         private readonly GameContext _game;
 
-        public RoutePaintReactiveSystem(IContext<GameEntity> context) : base(context)
+        public RouteFractionPaintReactiveSystem(IContext<GameEntity> context) : base(context)
         {
             _game = Contexts.sharedInstance.game;
         }

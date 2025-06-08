@@ -1,5 +1,6 @@
 ﻿using Code.Gameplay.Routes.Services;
 using Code.Gameplay.Soldiers.Services;
+using Code.Gameplay.Towers.Services;
 using Code.Infrastructure.Services;
 using Code.Infrastructure.StaticData;
 using Code.Infrastructure.Systems;
@@ -21,6 +22,7 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
             Container.BindInterfacesTo<RouteFactory>().AsSingle();
             Container.BindInterfacesTo<SoldierFactory>().AsSingle();
+            Container.BindInterfacesTo<ProjectileFactory>().AsSingle();
             Container.Bind<ISystemFactory>().To<SystemFactory>().AsSingle();
             Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
         }

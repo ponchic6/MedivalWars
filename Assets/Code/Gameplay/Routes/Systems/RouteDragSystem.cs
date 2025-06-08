@@ -22,9 +22,14 @@ namespace Code.Gameplay.Routes.Systems
             foreach (GameEntity entity in _entities)
             {
                 GameEntity startTower = _game.GetEntityWithId(entity.routeStartId.Value);
-                entity.lineRenderer.Value.SetPosition(0, startTower.transform.Value.position + Vector3.up * _commonStaticData.verticalRouteOffset);
-                Vector3 groundIntersect = GetGroundIntersect();
-                entity.lineRenderer.Value.SetPosition(1, groundIntersect);
+                Vector3 startPosition = startTower.transform.Value.position + Vector3.up * _commonStaticData.verticalRouteOffset;
+                Vector3 endPosition = GetGroundIntersect();
+                
+                entity.lineRenderer.Value.SetPosition(0, startPosition);
+                entity.lineRenderer.Value.SetPosition(1, endPosition);
+                
+                bool hasIntersection = CheckObstacleIntersection(startPosition, endPosition);
+                entity.isRouteIntersectingObstacle = hasIntersection;
             }
         }
 
@@ -43,6 +48,19 @@ namespace Code.Gameplay.Routes.Systems
             }
         
             return Vector3.zero;
+        }
+        
+        private bool CheckObstacleIntersection(Vector3 startPos, Vector3 endPos)
+        {
+            int obstacleLayerMask = 1 << LayerMask.NameToLayer("Obstacles");
+            
+            Vector3 direction = endPos - startPos;
+            float distance = direction.magnitude;
+
+            if (Physics.Raycast(startPos, direction.normalized, out _, distance, obstacleLayerMask))
+                return true;
+            
+            return false;
         }
     }
 }

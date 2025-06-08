@@ -1,0 +1,96 @@
+using System.Collections.Generic;
+using System.Linq;
+using Code.Gameplay.Routes.Services;
+using Code.Gameplay.Towers;
+using Code.Infrastructure.StaticData;
+using Entitas;
+using UnityEngine;
+using Random = System.Random;
+
+namespace Code.Gameplay.EnemyAi.System
+{
+    public class EnemyCreationRouteReactiveSystem : ReactiveSystem<GameEntity>
+    {
+        private readonly IRouteFactory _routeFactory;
+        private readonly GameContext _game;
+        private readonly IGroup<GameEntity> _entities;
+        private readonly Random _random;
+        private readonly CommonStaticData _commonStaticData;
+
+        public EnemyCreationRouteReactiveSystem(IContext<GameEntity> context, IRouteFactory routeFactory, CommonStaticData commonStaticData) : base(context)
+        {
+            _routeFactory = routeFactory;
+            _commonStaticData = commonStaticData;
+            _game = Contexts.sharedInstance.game;
+            _random = new Random();
+        }
+
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
+            context.CreateCollector(GameMatcher.EnemyReadyToAction.Added());
+
+        protected override bool Filter(GameEntity entity) =>
+            true;
+
+        protected override void Execute(List<GameEntity> entities)
+        {
+            _game.enemyActionCooldownEntity.ReplaceEnemyActionCooldown(_commonStaticData.enemyActionCooldown);
+            _game.enemyActionCooldownEntity.isEnemyReadyToAction = false;
+
+            List<GameEntity> filteredTowers = _game
+                .GetGroup(GameMatcher.AllOf(GameMatcher.TowerFraction, GameMatcher.Tower))
+                .GetEntities()
+                .Where(x => x.towerFraction.Value == TowerFractionsEnum.Red)
+                .Where(x => x.usedRouteCount.Value < x.maxRouteCount.Value)
+                .ToList();
+
+            GameEntity randomEnemyTower = filteredTowers.Any() 
+                ? filteredTowers[_random.Next(filteredTowers.Count)]
+                : null;
+
+            if (randomEnemyTower == null)
+                return;
+
+            List<GameEntity> destinationTowers = _game
+                .GetGroup(GameMatcher.AllOf(GameMatcher.TowerFraction, GameMatcher.Tower))
+                .GetEntities()
+                .Where(x => x != randomEnemyTower)
+                .Where(x =>
+                {
+                    foreach (int routeId in randomEnemyTower.towerRouteIdList.Value)
+                    {
+                        if (_game.GetEntityWithId(routeId).routeFinishId.Value == x.id.Value)
+                            return false;
+                    }
+                    return true;
+                })
+                .Where(x => !HasObstacleBetween(randomEnemyTower, x)) // Добавлена проверка препятствий
+                .ToList();
+
+            GameEntity destination = destinationTowers.Any() 
+                ? destinationTowers[_random.Next(destinationTowers.Count)]
+                : null;
+            
+            if (destination == null)
+                return;
+            
+            _routeFactory.CreateRoute(randomEnemyTower, destination);
+        }
+
+        private bool HasObstacleBetween(GameEntity start, GameEntity end)
+        {
+            // Получаем позиции башен (предполагая, что у них есть компонент Position)
+            Vector2 startPos = start.position.Value;
+            Vector2 endPos = end.position.Value;
+            
+            // Вычисляем направление и расстояние
+            Vector2 direction = (endPos - startPos).normalized;
+            float distance = Vector2.Distance(startPos, endPos);
+            
+            // Выполняем raycast для проверки препятствий
+            int obstacleLayerMask = LayerMask.GetMask("Obstacle");
+            RaycastHit2D hit = Physics2D.Raycast(startPos, direction, distance, obstacleLayerMask);
+            
+            return hit.collider != null;
+        }
+    }
+}

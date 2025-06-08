@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Soldiers.Services;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Soldiers.Services;
 using Code.Infrastructure.StaticData;
 using Entitas;
 
@@ -10,6 +11,7 @@ namespace Code.Gameplay.Soldiers.Systems
         private readonly CommonStaticData _commonStaticData;
         private readonly GameContext _game;
         private readonly IGroup<GameEntity> _entities;
+        private List<GameEntity> _buffer = new(16);
 
         public SoldierCreateSystem(ISoldierFactory soldierFactory, CommonStaticData commonStaticData)
         {
@@ -22,7 +24,7 @@ namespace Code.Gameplay.Soldiers.Systems
 
         public void Execute()
         {
-            foreach (GameEntity entity in _entities.GetEntities())
+            foreach (GameEntity entity in _entities.GetEntities(_buffer))
             {
                 if (entity.towerRouteIdList.Value.Count == 0)
                     continue;

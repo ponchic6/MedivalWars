@@ -17,7 +17,6 @@ namespace Code.Gameplay.EnemyAi.System
         private readonly Random _random;
         private readonly CommonStaticData _commonStaticData;
 
-
         public EnemyCreationRouteReactiveSystem(IContext<GameEntity> context, IRouteFactory routeFactory, CommonStaticData commonStaticData) : base(context)
         {
             _routeFactory = routeFactory;
@@ -37,7 +36,8 @@ namespace Code.Gameplay.EnemyAi.System
             _game.enemyActionCooldownEntity.ReplaceEnemyActionCooldown(_commonStaticData.enemyActionCooldown);
             _game.enemyActionCooldownEntity.isEnemyReadyToAction = false;
 
-            List<GameEntity> filteredTowers = _game.GetGroup(GameMatcher.AllOf(GameMatcher.TowerFraction, GameMatcher.Tower))
+            List<GameEntity> filteredTowers = _game
+                .GetGroup(GameMatcher.AllOf(GameMatcher.TowerFraction, GameMatcher.Tower))
                 .GetEntities()
                 .Where(x => x.towerFraction.Value == TowerFractionsEnum.Red)
                 .Where(x => x.usedRouteCount.Value < x.maxRouteCount.Value)
@@ -50,7 +50,8 @@ namespace Code.Gameplay.EnemyAi.System
             if (randomEnemyTower == null)
                 return;
 
-            List<GameEntity> destinationTowers = _game.GetGroup(GameMatcher.AllOf(GameMatcher.TowerFraction, GameMatcher.Tower))
+            List<GameEntity> destinationTowers = _game
+                .GetGroup(GameMatcher.AllOf(GameMatcher.TowerFraction, GameMatcher.Tower))
                 .GetEntities()
                 .Where(x => x != randomEnemyTower)
                 .Where(x =>
@@ -62,6 +63,7 @@ namespace Code.Gameplay.EnemyAi.System
                     }
                     return true;
                 })
+                .Where(x => !HasObstacleBetween(randomEnemyTower, x))
                 .ToList();
 
             GameEntity destination = destinationTowers.Any() 
@@ -72,6 +74,22 @@ namespace Code.Gameplay.EnemyAi.System
                 return;
             
             _routeFactory.CreateRoute(randomEnemyTower, destination);
+        }
+
+        private bool HasObstacleBetween(GameEntity start, GameEntity end)
+        {
+            Vector3 startPos = start.transform.Value.position;
+            Vector3 endPos = end.transform.Value.position;
+            
+            Vector3 direction = (endPos - startPos).normalized;
+            float distance = Vector3.Distance(startPos, endPos);
+            
+            int obstacleLayerMask = 1 << LayerMask.NameToLayer("Obstacles");
+            
+            if (Physics.Raycast(startPos, direction.normalized, out _, distance, obstacleLayerMask))
+                return true;
+            
+            return false;
         }
     }
 }

@@ -10,7 +10,8 @@ namespace Code.Gameplay.Routes.Systems
             Add(systemFactory.Create<RouteDestructMarkerBySwapSystem>());
             
             Add(systemFactory.Create<RouteCreateReactiveSystem>());
-            Add(systemFactory.Create<RoutePaintReactiveSystem>());
+            Add(systemFactory.Create<RouteFractionPaintReactiveSystem>());
+            Add(systemFactory.Create<RouteObstaclePaintReactiveSystem>());
             Add(systemFactory.Create<OppositeRouteAdjustmentViewReactiveSystem>());
             Add(systemFactory.Create<RouteByDestructAdjustmentViewReactiveSystem>());
             Add(systemFactory.Create<RouteAdjustMaxRouteByLevelDecreaseReactiveSystem>());

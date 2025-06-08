@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Towers.Systems
 {
-    public class  TowerSoldierCreationCooldownSystem : IExecuteSystem
+    public class TowerSoldierCreationCooldownSystem : IExecuteSystem
     {
         private readonly GameContext _game;
         private readonly IGroup<GameEntity> _entities;
@@ -12,7 +12,7 @@ namespace Code.Gameplay.Towers.Systems
         {
             _game = Contexts.sharedInstance.game;
 
-            _entities = _game.GetGroup(GameMatcher.SoldierCreationCooldown);
+            _entities = _game.GetGroup(GameMatcher.AllOf(GameMatcher.SoldierCreationCooldown, GameMatcher.Tower));
         }
 
         public void Execute()

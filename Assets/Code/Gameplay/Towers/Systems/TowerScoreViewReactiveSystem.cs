@@ -17,7 +17,7 @@ namespace Code.Gameplay.Towers.Systems
 
         protected override void Execute(List<GameEntity> entities)
         {
-            foreach (GameEntity entity in entities)
+            foreach (GameEntity entity in entities) 
                 entity.towerUiView.Value.Score = entity.towerScore.Value;
         }
     }

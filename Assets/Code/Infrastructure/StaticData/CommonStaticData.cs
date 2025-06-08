@@ -10,8 +10,10 @@ namespace Code.Infrastructure.StaticData
         public int scoreFromFirstToSecondLevel;
         public EntityBehaviour towerPrefab;
         public EntityBehaviour routePrefab;
+        public EntityBehaviour catapultPrefab;
         public EntityBehaviour blueSoldierPrefab;
         public EntityBehaviour redSoldierPrefab;
+        public EntityBehaviour projectilePrefab;
         public float soldierCreationCooldownZeroLevel;
         public float soldierCreationCooldownFirstLevel;
         public float soldierCreationCooldownSecondLevel;
@@ -19,5 +21,13 @@ namespace Code.Infrastructure.StaticData
         public float towerScoreIncreasingCooldown;
         public float verticalRouteOffset;
         public float enemyActionCooldown;
+        public float catapultCooldownZeroLevel;
+        public float catapultCooldownFirstLevel;
+        public float catapultCooldownSecondLevel;
+        public float catapultRangeZeroLevel;
+        public float catapultRangeFirstLevel;
+        public float catapultRangeSecondLevel;
+        public float projectileSpeed;
+        public int maxScore;
     }
 }

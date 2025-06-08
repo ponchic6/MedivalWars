@@ -2,7 +2,6 @@ using Code.Gameplay.Routes.Services;
 using Code.Gameplay.Towers;
 using Code.Gameplay.Towers.View;
 using Code.Infrastructure.View;
-using Entitas;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Zenject;
@@ -37,6 +36,9 @@ namespace Code.Gameplay.Routes.View
                 return;
             
             if (_entityBehaviour.Entity.towerFraction.Value != TowerFractionsEnum.Blue)
+                return;
+            
+            if (_entityBehaviour.Entity.isCatapult)
                 return;
             
             _entityBehaviour.Entity.isStartTowerRoutesPoint = true;
