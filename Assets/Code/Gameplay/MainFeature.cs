@@ -4,6 +4,7 @@ using Code.Gameplay.Map.Systems;
 using Code.Gameplay.Routes.Systems;
 using Code.Gameplay.Soldiers.Systems;
 using Code.Gameplay.Towers.Systems;
+using Code.Gameplay.UI.Systems;
 using Code.Infrastructure.Destroy;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
@@ -16,6 +17,7 @@ namespace Code.Gameplay
         {
             Add(systemFactory.Create<ViewFeature>());
             Add(systemFactory.Create<InputFeature>());
+            Add(systemFactory.Create<UiFeature>());
             Add(systemFactory.Create<MapFeature>());
             Add(systemFactory.Create<EnemyAiFeature>());
             Add(systemFactory.Create<TowerFeature>());

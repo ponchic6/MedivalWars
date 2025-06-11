@@ -13,46 +13,55 @@ public static class GameComponentsLookup {
     public const int Transform = 2;
     public const int EnemyActionCooldown = 3;
     public const int EnemyReadyToAction = 4;
-    public const int Input = 5;
-    public const int LeftMouseButtonHold = 6;
-    public const int RightMouseButtonHold = 7;
-    public const int FinishTowerRoutesPoint = 8;
-    public const int Route = 9;
-    public const int RouteDistance = 10;
-    public const int RouteFinishId = 11;
-    public const int RouteIntersectingObstacle = 12;
-    public const int RouteReady = 13;
-    public const int RoutesColorController = 14;
-    public const int RouteStartId = 15;
-    public const int StartTowerRoutesPoint = 16;
-    public const int SoldierAttackTowerId = 17;
-    public const int SoldierTowerOfBirthId = 18;
-    public const int Catapult = 19;
-    public const int CatapultShootingCooldown = 20;
-    public const int MaxRouteCount = 21;
-    public const int Projectile = 22;
-    public const int ProjectileTargetId = 23;
-    public const int ReadyToCreateSoldier = 24;
-    public const int ReadyToShooting = 25;
-    public const int SoldierCreationCooldown = 26;
-    public const int Tower = 27;
-    public const int TowerFraction = 28;
-    public const int TowerFractionColorController = 29;
-    public const int TowerLevel = 30;
-    public const int TowerLevelViewController = 31;
-    public const int TowerRouteIdList = 32;
-    public const int TowerScore = 33;
-    public const int TowerScoreIncreasingCooldown = 34;
-    public const int TowerUiView = 35;
-    public const int UsedRouteCount = 36;
-    public const int Destructed = 37;
-    public const int InitialTransform = 38;
-    public const int View = 39;
-    public const int ViewPath = 40;
-    public const int ViewPrefab = 41;
-    public const int ViewPrefabWithParent = 42;
+    public const int ChoseLevel = 5;
+    public const int Input = 6;
+    public const int LeftMouseButtonHold = 7;
+    public const int MapRestartClick = 8;
+    public const int NextLevelClick = 9;
+    public const int PlayClick = 10;
+    public const int PreviousLevelClick = 11;
+    public const int RightMouseButtonHold = 12;
+    public const int FinishTowerRoutesPoint = 13;
+    public const int Route = 14;
+    public const int RouteDistance = 15;
+    public const int RouteFinishId = 16;
+    public const int RouteIntersectingObstacle = 17;
+    public const int RouteReady = 18;
+    public const int RoutesColorController = 19;
+    public const int RouteStartId = 20;
+    public const int StartTowerRoutesPoint = 21;
+    public const int HorseKnight = 22;
+    public const int SoldierAttackTowerId = 23;
+    public const int SoldierHealth = 24;
+    public const int SoldierTowerOfBirthId = 25;
+    public const int Catapult = 26;
+    public const int CatapultShootingCooldown = 27;
+    public const int Hippodrome = 28;
+    public const int MaxRouteCount = 29;
+    public const int Obstacle = 30;
+    public const int Projectile = 31;
+    public const int ProjectileTargetId = 32;
+    public const int SoldierCreationCooldown = 33;
+    public const int Tower = 34;
+    public const int TowerFraction = 35;
+    public const int TowerFractionColorController = 36;
+    public const int TowerLevel = 37;
+    public const int TowerLevelViewController = 38;
+    public const int TowerRouteIdList = 39;
+    public const int TowerScore = 40;
+    public const int TowerScoreIncreasingCooldown = 41;
+    public const int TowerUiView = 42;
+    public const int UsedRouteCount = 43;
+    public const int HudCanvas = 44;
+    public const int HudHandler = 45;
+    public const int Destructed = 46;
+    public const int InitialTransform = 47;
+    public const int View = 48;
+    public const int ViewPath = 49;
+    public const int ViewPrefab = 50;
+    public const int ViewPrefabWithParent = 51;
 
-    public const int TotalComponents = 43;
+    public const int TotalComponents = 52;
 
     public static readonly string[] componentNames = {
         "Id",
@@ -60,8 +69,13 @@ public static class GameComponentsLookup {
         "Transform",
         "EnemyActionCooldown",
         "EnemyReadyToAction",
+        "ChoseLevel",
         "Input",
         "LeftMouseButtonHold",
+        "MapRestartClick",
+        "NextLevelClick",
+        "PlayClick",
+        "PreviousLevelClick",
         "RightMouseButtonHold",
         "FinishTowerRoutesPoint",
         "Route",
@@ -72,15 +86,17 @@ public static class GameComponentsLookup {
         "RoutesColorController",
         "RouteStartId",
         "StartTowerRoutesPoint",
+        "HorseKnight",
         "SoldierAttackTowerId",
+        "SoldierHealth",
         "SoldierTowerOfBirthId",
         "Catapult",
         "CatapultShootingCooldown",
+        "Hippodrome",
         "MaxRouteCount",
+        "Obstacle",
         "Projectile",
         "ProjectileTargetId",
-        "ReadyToCreateSoldier",
-        "ReadyToShooting",
         "SoldierCreationCooldown",
         "Tower",
         "TowerFraction",
@@ -92,6 +108,8 @@ public static class GameComponentsLookup {
         "TowerScoreIncreasingCooldown",
         "TowerUiView",
         "UsedRouteCount",
+        "HudCanvas",
+        "HudHandler",
         "Destructed",
         "InitialTransform",
         "View",
@@ -106,8 +124,13 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.EnemyAi.EnemyActionCooldown),
         typeof(Code.Gameplay.EnemyAi.EnemyReadyToAction),
+        typeof(Code.Gameplay.Input.ChoseLevel),
         typeof(Code.Gameplay.Input.Input),
         typeof(Code.Gameplay.Input.LeftMouseButtonHold),
+        typeof(Code.Gameplay.Input.MapRestartClick),
+        typeof(Code.Gameplay.Input.NextLevelClick),
+        typeof(Code.Gameplay.Input.PlayClick),
+        typeof(Code.Gameplay.Input.PreviousLevelClick),
         typeof(Code.Gameplay.Input.RightMouseButtonHold),
         typeof(Code.Gameplay.Routes.FinishTowerRoutesPoint),
         typeof(Code.Gameplay.Routes.Route),
@@ -118,15 +141,17 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Routes.RoutesColorControllerComponent),
         typeof(Code.Gameplay.Routes.RouteStartId),
         typeof(Code.Gameplay.Routes.StartTowerRoutesPoint),
+        typeof(Code.Gameplay.Soldiers.HorseKnight),
         typeof(Code.Gameplay.Soldiers.SoldierAttackTowerId),
+        typeof(Code.Gameplay.Soldiers.SoldierHealth),
         typeof(Code.Gameplay.Soldiers.SoldierTowerOfBirthId),
         typeof(Code.Gameplay.Towers.Catapult),
         typeof(Code.Gameplay.Towers.CatapultShootingCooldownComponent),
+        typeof(Code.Gameplay.Towers.Hippodrome),
         typeof(Code.Gameplay.Towers.MaxRouteCount),
+        typeof(Code.Gameplay.Towers.Obstacle),
         typeof(Code.Gameplay.Towers.Projectile),
         typeof(Code.Gameplay.Towers.ProjectileTargetId),
-        typeof(Code.Gameplay.Towers.ReadyToCreateSoldier),
-        typeof(Code.Gameplay.Towers.ReadyToShooting),
         typeof(Code.Gameplay.Towers.SoldierCreationCooldown),
         typeof(Code.Gameplay.Towers.Tower),
         typeof(Code.Gameplay.Towers.TowerFraction),
@@ -138,6 +163,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Towers.TowerScoreIncreasingCooldown),
         typeof(Code.Gameplay.Towers.TowerUiViewComponent),
         typeof(Code.Gameplay.Towers.UsedRouteCount),
+        typeof(Code.Gameplay.UI.HudCanvas),
+        typeof(Code.Gameplay.UI.HudHandlerComponent),
         typeof(Code.Infrastructure.Destroy.Destructed),
         typeof(Code.Infrastructure.View.InitialTransform),
         typeof(Code.Infrastructure.View.View),

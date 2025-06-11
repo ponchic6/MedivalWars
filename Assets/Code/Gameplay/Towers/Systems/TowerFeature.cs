@@ -7,20 +7,20 @@ namespace Code.Gameplay.Towers.Systems
     {
         public TowerFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create <TowerLevelInitializeSystem>());
+            Add(systemFactory.Create <TowerLevelInitializeReactiveSystem>());
             
             Add(systemFactory.Create<TowerScorePassiveIncreasingSystem>());
-            Add(systemFactory.Create<TowerSoldierCreationCooldownSystem>());
-            Add(systemFactory.Create<CatapultShootingCooldownSystem>());
-            Add(systemFactory.Create<CatapultShootingSystem>());
-            Add(systemFactory.Create<ProjectileMoveSystem>());
-            Add(systemFactory.Create<ProjectileDestructSystem>());
+            Add(systemFactory.Create<SoldierCreationSystem>());
+            Add(systemFactory.Create<CatapultProjectileCreationSystem>());
+            Add(systemFactory.Create<CatapultProjectileMoveSystem>());
+            Add(systemFactory.Create<CatapultProjectileDestructSystem>());
 
-            Add(systemFactory.Create<SoldierCreationByMaxScoreReactiveSystem>());
-            Add(systemFactory.Create<TowerScoreViewReactiveSystem>());
-            Add(systemFactory.Create<TowerLevelReactiveSystem>());
-            Add(systemFactory.Create<TowerLevelViewReactiveSystem>());
-            Add(systemFactory.Create<TowerFractionChangeReactiveSystem>());
+            Add(systemFactory.Create<SoldierCreationOnMaxScoreReactiveSystem>());
+            Add(systemFactory.Create<TowerScoreChangeViewReactiveSystem>());
+            Add(systemFactory.Create<TowerLevelChangeReactiveSystem>());
+            Add(systemFactory.Create<TowerLevelChangeViewReactiveSystem>());
+            Add(systemFactory.Create<TowerFractionChangeViewReactiveSystem>());
+            Add(systemFactory.Create<DestructRoutesOnChangeFractionReactiveSystem>());
             Add(systemFactory.Create<MaxScoreFreezeReactiveSystem>());
         }
     }

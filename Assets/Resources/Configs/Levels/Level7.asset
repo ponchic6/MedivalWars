@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c0ae7cde8e45078d2819fd5b46863c, type: 3}
+  m_Name: Level7
+  m_EditorClassIdentifier: 
+  levelObjects:
+  - position: {x: 0.688, y: 0, z: 0.309}
+    towerFraction: 2
+    towerType: 0
+    initialTowerScore: 2
+  - position: {x: -0.604, y: 0, z: 0.37}
+    towerFraction: 1
+    towerType: 0
+    initialTowerScore: 2
+  - position: {x: 0.024, y: 0, z: 0.653}
+    towerFraction: 2
+    towerType: 0
+    initialTowerScore: 1
+  - position: {x: 0.027, y: 0, z: -0.443}
+    towerFraction: 2
+    towerType: 1
+    initialTowerScore: 5
+  - position: {x: 0.596, y: 0, z: -0.462}
+    towerFraction: 2
+    towerType: 0
+    initialTowerScore: 3
+  - position: {x: -0.543, y: 0, z: -0.485}
+    towerFraction: 2
+    towerType: 0
+    initialTowerScore: 3
+  - position: {x: -0.005, y: 0, z: -0.958}
+    towerFraction: 0
+    towerType: 0
+    initialTowerScore: 20
+  obstaclePrefab: {fileID: -3542610356658470755, guid: 3af72fce415dd7242b50699a09c63482, type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8397012158638377959}
   - component: {fileID: 5233973732737371125}
   - component: {fileID: 4234532309308664319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_turret_neutral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 3969186387876593805}
   - component: {fileID: 2734692757664442478}
   - component: {fileID: 7668123658526598975}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,8 +155,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5beb49fb66c47694b998c05f6468b960, type: 2}
-  m_sharedMaterial: {fileID: -7719056647945799375, guid: 5beb49fb66c47694b998c05f6468b960, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a98a1dcb4fd86174aa31dd72e1598ebc, type: 2}
+  m_sharedMaterial: {fileID: -3535458488641115375, guid: a98a1dcb4fd86174aa31dd72e1598ebc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.1
+  m_fontSize: 0.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -233,7 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5717757082268119991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 5930021139509361578}
   - component: {fileID: 4074784153286337350}
   - component: {fileID: 2780728070390906977}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_arm_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2565031609909238942}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,6 +374,142 @@ Transform:
   - {fileID: 7618490490683644985}
   m_Father: {fileID: 6739554164325390714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1551086291249690314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 593253329862347971}
+  - component: {fileID: 388101217867315776}
+  - component: {fileID: 1065229158827885576}
+  m_Layer: 6
+  m_Name: Text (TMP) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &593253329862347971
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551086291249690314}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4421010073812371107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &388101217867315776
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551086291249690314}
+  m_CullTransparentMesh: 1
+--- !u!114 &1065229158827885576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551086291249690314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Max
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: a98a1dcb4fd86174aa31dd72e1598ebc, type: 2}
+  m_sharedMaterial: {fileID: -3535458488641115375, guid: a98a1dcb4fd86174aa31dd72e1598ebc, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 0.06
+  m_fontSizeBase: 0.06
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 0
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: -0.037577186, z: 0, w: 0.048340984}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1634904461289616388
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +530,7 @@ GameObject:
   - component: {fileID: 2964807040079155707}
   - component: {fileID: 5341048783581758944}
   - component: {fileID: 5051523880442456748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Catapult
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +767,7 @@ GameObject:
   - component: {fileID: 3071442750137647549}
   - component: {fileID: 7476467184520973349}
   - component: {fileID: 94957117591783872}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_turret_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +854,7 @@ GameObject:
   - component: {fileID: 4016110486328153763}
   - component: {fileID: 2690690601952505085}
   - component: {fileID: 6770531976312948496}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_turret_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +942,7 @@ GameObject:
   - component: {fileID: 3836973225293014794}
   - component: {fileID: 5620197476520716605}
   - component: {fileID: 2571906939600921335}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_turret_blue (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -893,7 +1029,7 @@ GameObject:
   - component: {fileID: 4014696980597141866}
   - component: {fileID: 490481378561463777}
   - component: {fileID: 2138273043791628031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -979,7 +1115,7 @@ GameObject:
   - component: {fileID: 4898894336114799978}
   - component: {fileID: 2774270805548961008}
   - component: {fileID: 6911227874836341212}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_arm_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1065,7 +1201,7 @@ GameObject:
   - component: {fileID: 2109751037246306050}
   - component: {fileID: 8762164119472825875}
   - component: {fileID: 1982220060147944753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_arm_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1151,7 +1287,7 @@ GameObject:
   - component: {fileID: 6739554164325390714}
   - component: {fileID: 1381898063955265129}
   - component: {fileID: 5880422759829336920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_catapult_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1239,7 +1375,7 @@ GameObject:
   - component: {fileID: 3530925687067819930}
   - component: {fileID: 3255281002291037175}
   - component: {fileID: 4206517124020757424}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1325,7 +1461,7 @@ GameObject:
   - component: {fileID: 7286838578482727466}
   - component: {fileID: 333808895155702548}
   - component: {fileID: 1131234730734565944}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1411,7 +1547,7 @@ GameObject:
   - component: {fileID: 1054704839088486139}
   - component: {fileID: 8415523948541034427}
   - component: {fileID: 694166354186577342}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_arm_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1497,7 +1633,7 @@ GameObject:
   - component: {fileID: 8141055407842011753}
   - component: {fileID: 7878132933514758110}
   - component: {fileID: 1521824924267678236}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1572,7 +1708,7 @@ GameObject:
   - component: {fileID: 1530555241735431342}
   - component: {fileID: 2838054421629270072}
   - component: {fileID: 5749728501624146712}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_big_tower_catapult_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1658,7 +1794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7731960446694576606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1692,7 +1828,7 @@ GameObject:
   - component: {fileID: 7150760831982408900}
   - component: {fileID: 3050120014273895090}
   - component: {fileID: 2484044317088090394}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1767,7 +1903,7 @@ GameObject:
   - component: {fileID: 3361118467034256408}
   - component: {fileID: 1755157256421119360}
   - component: {fileID: 4609024487398604136}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1853,7 +1989,7 @@ GameObject:
   - component: {fileID: 2909164737191758730}
   - component: {fileID: 7854469206528330060}
   - component: {fileID: 4124903430471393638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1939,7 +2075,7 @@ GameObject:
   - component: {fileID: 4558791863631588311}
   - component: {fileID: 2520846406016626812}
   - component: {fileID: 6666270024800910352}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_big_tower_catapult_neutral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2027,7 +2163,7 @@ GameObject:
   - component: {fileID: 6353185147984042407}
   - component: {fileID: 7452350424885425235}
   - component: {fileID: 3011904970546099811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2113,7 +2249,7 @@ GameObject:
   - component: {fileID: 7072131164396744095}
   - component: {fileID: 8128458834055632833}
   - component: {fileID: 607022860893387820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_turret_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2200,7 +2336,7 @@ GameObject:
   - component: {fileID: 5907275695162874772}
   - component: {fileID: 3476877024133068981}
   - component: {fileID: 7532652909829036695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_turret_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2288,7 +2424,7 @@ GameObject:
   - component: {fileID: 100966865877774268}
   - component: {fileID: 2073253115122972887}
   - component: {fileID: 8364490845941412458}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_arm_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2374,7 +2510,7 @@ GameObject:
   - component: {fileID: 8729656048756907575}
   - component: {fileID: 2552481033133157718}
   - component: {fileID: 981498121208075189}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2460,7 +2596,7 @@ GameObject:
   - component: {fileID: 5097633343644081429}
   - component: {fileID: 4049703934152436654}
   - component: {fileID: 3267357619401466875}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2535,7 +2671,7 @@ GameObject:
   - component: {fileID: 1260540697097213482}
   - component: {fileID: 8670411703666643120}
   - component: {fileID: 6221089518018110802}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2619,7 +2755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 422852073729744262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2636,7 +2772,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2909164737191758730}
@@ -2653,7 +2789,7 @@ GameObject:
   - component: {fileID: 5493022089806471630}
   - component: {fileID: 2757833136246997413}
   - component: {fileID: 2805792469722005475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_arm_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2739,7 +2875,7 @@ GameObject:
   - component: {fileID: 3979588360313263627}
   - component: {fileID: 6859268614137947599}
   - component: {fileID: 668301530014431134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_turret_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2826,7 +2962,7 @@ GameObject:
   - component: {fileID: 6623558403052821271}
   - component: {fileID: 330130763847462507}
   - component: {fileID: 4303456725572635540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_turret_blue (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2913,7 +3049,7 @@ GameObject:
   - component: {fileID: 6543057351610463298}
   - component: {fileID: 6543057351606939966}
   - component: {fileID: 6543057351608087588}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_big_tower_catapult_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2999,7 +3135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1128636909798962309}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3031,7 +3167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3581216660308522138}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3048,7 +3184,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4014696980597141866}
@@ -3063,7 +3199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1024256064830441}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3097,7 +3233,7 @@ GameObject:
   - component: {fileID: 3660742552321498264}
   - component: {fileID: 6322174806282836179}
   - component: {fileID: 3383862599834603265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_catapult_neutral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3183,7 +3319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8158857101672157312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3217,7 +3353,7 @@ GameObject:
   - component: {fileID: 7618490490683644985}
   - component: {fileID: 2207787973915393169}
   - component: {fileID: 4548551022395437760}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3303,7 +3439,7 @@ GameObject:
   - component: {fileID: 5508581404007718084}
   - component: {fileID: 4541636450441090464}
   - component: {fileID: 2368987312722896972}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_turret_blue (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3388,7 +3524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5524167631181716939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3405,7 +3541,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3530925687067819930}
@@ -3422,7 +3558,7 @@ GameObject:
   - component: {fileID: 1613705490390470230}
   - component: {fileID: 8293772888014747596}
   - component: {fileID: 752325180713081568}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_arm_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3508,7 +3644,7 @@ GameObject:
   - component: {fileID: 2823232542500009985}
   - component: {fileID: 4691792221493934119}
   - component: {fileID: 321557796648160931}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_arm_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3594,7 +3730,7 @@ GameObject:
   - component: {fileID: 5421402260189059897}
   - component: {fileID: 6296521718074206748}
   - component: {fileID: 5246526227437909437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: catapult_arm_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3680,7 +3816,7 @@ GameObject:
   - component: {fileID: 8330676740209471670}
   - component: {fileID: 4914370360641879827}
   - component: {fileID: 7194410828128619481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_catapult_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3771,7 +3907,7 @@ GameObject:
   - component: {fileID: 4463757733532745420}
   - component: {fileID: 5945841995431724134}
   - component: {fileID: 1815161424242227911}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3791,6 +3927,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3969186387876593805}
+  - {fileID: 593253329862347971}
   - {fileID: 7150760831982408900}
   - {fileID: 8141055407842011753}
   - {fileID: 5097633343644081429}
@@ -3878,6 +4015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entityBehaviour: {fileID: 4665519136035442161}
   _textScore: {fileID: 7668123658526598975}
+  _maxTextScore: {fileID: 1065229158827885576}
   _usedRoutesList:
   - {fileID: 2484044317088090394}
   - {fileID: 1521824924267678236}

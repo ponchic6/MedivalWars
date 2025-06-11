@@ -28,7 +28,7 @@ namespace Code.Gameplay.Routes.Systems
                 entity.lineRenderer.Value.SetPosition(0, startPosition);
                 entity.lineRenderer.Value.SetPosition(1, endPosition);
                 
-                bool hasIntersection = CheckObstacleIntersection(startPosition, endPosition);
+                bool hasIntersection = HasObstacleBetween(startPosition, endPosition);
                 entity.isRouteIntersectingObstacle = hasIntersection;
             }
         }
@@ -50,17 +50,19 @@ namespace Code.Gameplay.Routes.Systems
             return Vector3.zero;
         }
         
-        private bool CheckObstacleIntersection(Vector3 startPos, Vector3 endPos)
+        private bool HasObstacleBetween(Vector3 startPos, Vector3 endPos)
         {
             int obstacleLayerMask = 1 << LayerMask.NameToLayer("Obstacles");
             
             Vector3 direction = endPos - startPos;
             float distance = direction.magnitude;
 
-            if (Physics.Raycast(startPos, direction.normalized, out _, distance, obstacleLayerMask))
-                return true;
+            RaycastHit[] hits = Physics.RaycastAll(startPos, direction, distance, obstacleLayerMask);
+
+            if (hits.Length == 0 || hits.Length == 1 && _game.isFinishTowerRoutesPoint)
+                return false;
             
-            return false;
+            return true;
         }
     }
 }

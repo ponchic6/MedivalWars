@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Towers.Systems
 {
-    public class  TowerSoldierCreationCooldownSystem : IExecuteSystem
+    public class TowerSoldierCreationCooldownSystem : IExecuteSystem
     {
         private readonly GameContext _game;
         private readonly IGroup<GameEntity> _entities;

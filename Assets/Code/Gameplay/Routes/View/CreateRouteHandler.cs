@@ -41,6 +41,9 @@ namespace Code.Gameplay.Routes.View
             if (_entityBehaviour.Entity.isCatapult)
                 return;
             
+            if (!_entityBehaviour.Entity.hasUsedRouteCount)
+                return;
+            
             _entityBehaviour.Entity.isStartTowerRoutesPoint = true;
             _routeFactory.CreateDraggingRoute(_entityBehaviour.Entity);
         }

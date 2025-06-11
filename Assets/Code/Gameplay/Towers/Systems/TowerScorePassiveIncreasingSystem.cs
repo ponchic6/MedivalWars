@@ -15,7 +15,7 @@ namespace Code.Gameplay.Towers.Systems
             _game = Contexts.sharedInstance.game;
             _commonStaticData = commonStaticData;
 
-            _entities = _game.GetGroup(GameMatcher.AllOf(GameMatcher.TowerScore).NoneOf(GameMatcher.Catapult));
+            _entities = _game.GetGroup(GameMatcher.AllOf(GameMatcher.TowerScore, GameMatcher.TowerScoreIncreasingCooldown).NoneOf(GameMatcher.Catapult));
         }
         
         public void Execute()
@@ -32,12 +32,28 @@ namespace Code.Gameplay.Towers.Systems
                     
                     if (entity.towerScore.Value >= _commonStaticData.maxScore)
                         continue;
-                    
-                    entity.ReplaceTowerScoreIncreasingCooldown(_commonStaticData.towerScoreIncreasingCooldown);
+
+                    RefreshIncreasingCooldown(entity);
                     entity.ReplaceTowerScore(entity.towerScore.Value + 1);
                 }
                 
                 entity.towerScoreIncreasingCooldown.Value -= Time.deltaTime;
+            }
+        }
+
+        private void RefreshIncreasingCooldown(GameEntity entity)
+        {
+            switch (entity.towerLevel.Value)
+            {
+                case 0:
+                    entity.ReplaceTowerScoreIncreasingCooldown(_commonStaticData.towerScoreIncreasingCooldownZeroLevel);
+                    break; 
+                case 1:
+                    entity.ReplaceTowerScoreIncreasingCooldown(_commonStaticData.towerScoreIncreasingCooldownFirstLevel);
+                    break;
+                case 2:
+                    entity.ReplaceTowerScoreIncreasingCooldown(_commonStaticData.towerScoreIncreasingCooldownSecondLevel);
+                    break;
             }
         }
     }

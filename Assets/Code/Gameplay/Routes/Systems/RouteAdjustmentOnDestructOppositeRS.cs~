@@ -1,0 +1,62 @@
+﻿using System.Collections.Generic;
+using Entitas;
+using UnityEngine;
+
+namespace Code.Gameplay.Routes.Systems
+{
+    public class RouteAdjustmentOnDestructOppositeReactiveSystem : ReactiveSystem<GameEntity>
+    {
+        private readonly GameContext _game;
+
+        public RouteAdjustmentOnDestructOppositeReactiveSystem(IContext<GameEntity> context) : base(context)
+        {
+            _game = Contexts.sharedInstance.game;
+        }
+
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
+            context.CreateCollector(GameMatcher.Destructed.Added());
+
+        protected override bool Filter(GameEntity entity) =>
+            entity.isRoute;
+
+        protected override void Execute(List<GameEntity> entities)
+        {
+            foreach (GameEntity destructedRoute in entities)
+            {
+                if (!destructedRoute.hasRouteFinishId)
+                    continue;
+                
+                if (!CheckReverseRoadExist(destructedRoute, out var oppositeRoute))
+                    continue;
+
+                AdjustLineRenderer(oppositeRoute);
+            }
+        }
+
+        private void AdjustLineRenderer(GameEntity route)
+        {
+            Vector3 startPos = route.lineRenderer.Value.GetPosition(0);
+            Vector3 finishPos = route.lineRenderer.Value.GetPosition(1);
+            Vector3 delta = finishPos - startPos;
+            route.lineRenderer.Value.SetPosition(1, startPos + delta.normalized * route.routeDistance.Value);
+        }
+        
+        private bool CheckReverseRoadExist(GameEntity destructedRoute, out GameEntity oppositeRoute)
+        {
+            IGroup<GameEntity> completedRoutes = _game.GetGroup(GameMatcher.RouteFinishId);
+            
+            foreach (GameEntity completedRoute in completedRoutes)
+            {
+                if (completedRoute.routeFinishId.Value == destructedRoute.routeStartId.Value &&
+                    completedRoute.routeStartId.Value == destructedRoute.routeFinishId.Value)
+                {
+                    oppositeRoute = completedRoute;
+                    return true;
+                }
+            }
+
+            oppositeRoute = null;
+            return false;
+        } 
+    }
+}

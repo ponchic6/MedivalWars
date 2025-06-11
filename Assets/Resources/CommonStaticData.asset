@@ -12,26 +12,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf048ef284704ebe866ef0b8f9b7b211, type: 3}
   m_Name: CommonStaticData
   m_EditorClassIdentifier: 
-  scoreFromZeroToFirstLevel: 15
+  levels:
+  - {fileID: 11400000, guid: c98bfe7c38e12164cb7e287c0c7063f5, type: 2}
+  - {fileID: 11400000, guid: 62bef397bb68f8c4fb6d0dbf994f0292, type: 2}
+  - {fileID: 11400000, guid: 15655f888b2b9744db6a99f86a5cb2de, type: 2}
+  - {fileID: 11400000, guid: 4fb7b5890f54db841aa7cf0493cfdd3c, type: 2}
+  - {fileID: 11400000, guid: 14b7dccca37d841428483edaa360b593, type: 2}
+  - {fileID: 11400000, guid: 3dcb9d85ec3d630409449ae90756c9fc, type: 2}
+  - {fileID: 11400000, guid: a0c6c6c3e4e23cb49af87e22be44250d, type: 2}
+  - {fileID: 11400000, guid: 9eb046361d580bd4fa77e20ba0284e94, type: 2}
+  - {fileID: 11400000, guid: 83ebe4fecd0912b4ca81cca3ae489e0b, type: 2}
+  - {fileID: 11400000, guid: df684a60190b9b64ba25794ca2af1f27, type: 2}
+  scoreFromZeroToFirstLevel: 10
   scoreFromFirstToSecondLevel: 30
   towerPrefab: {fileID: 4665519136035442161, guid: 3104166061015a34e936e711bf8f9066, type: 3}
-  routePrefab: {fileID: -7642511565061890827, guid: e8186384c02063d488ab5c43a99cd4b1, type: 3}
+  hippodromePrefab: {fileID: 4665519136035442161, guid: 8516b030c3a0bbc48a76577fcf6d33e2, type: 3}
   catapultPrefab: {fileID: 4665519136035442161, guid: 5ecd7320850f65b4c931dbfd6a393782, type: 3}
+  projectilePrefab: {fileID: 6401979198727959464, guid: 4e94acc58d1f5dd4e890d37e0d85cbfe, type: 3}
+  routePrefab: {fileID: -7642511565061890827, guid: e8186384c02063d488ab5c43a99cd4b1, type: 3}
   blueSoldierPrefab: {fileID: -9052834212735386466, guid: 905ff5786460de946b847179a8d70ecd, type: 3}
   redSoldierPrefab: {fileID: -9052834212735386466, guid: eac44c53296c05c48b8d2f7161585d5d, type: 3}
-  projectilePrefab: {fileID: 6401979198727959464, guid: 4e94acc58d1f5dd4e890d37e0d85cbfe, type: 3}
-  soldierCreationCooldownZeroLevel: 3
-  soldierCreationCooldownFirstLevel: 2
-  soldierCreationCooldownSecondLevel: 1
+  blueHorseKnightPrefab: {fileID: -9052834212735386466, guid: cefae7f49f9232c44875e91057d6e50c, type: 3}
+  redHorseKnightPrefab: {fileID: -9052834212735386466, guid: c95e14ff6683a604787b89f39b854318, type: 3}
+  soldierCreationCooldownZeroLevel: 1
+  soldierCreationCooldownFirstLevel: 0.85
+  soldierCreationCooldownSecondLevel: 0.75
   soldierMoveSpeed: 1
-  towerScoreIncreasingCooldown: 2
   verticalRouteOffset: 0.1
-  enemyActionCooldown: 1
+  enemyActionCooldown: 5
   catapultCooldownZeroLevel: 5
   catapultCooldownFirstLevel: 4
   catapultCooldownSecondLevel: 3
   catapultRangeZeroLevel: 0.5
   catapultRangeFirstLevel: 1
-  catapultRangeSecondLevel: 1.5
+  catapultRangeSecondLevel: 1.2
   projectileSpeed: 4
-  maxScore: 45
+  maxScore: 65
+  towerScoreIncreasingCooldownZeroLevel: 4
+  towerScoreIncreasingCooldownFirstLevel: 3
+  towerScoreIncreasingCooldownSecondLevel: 2.5
+  canvasPrefab: {fileID: 6592886247740035181, guid: 5aa5023b88546ef49979ce7fa066e067, type: 3}

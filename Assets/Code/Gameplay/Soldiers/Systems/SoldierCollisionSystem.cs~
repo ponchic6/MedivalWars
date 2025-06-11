@@ -1,0 +1,23 @@
+﻿namespace Code.Gameplay.Soldiers.Systems
+{
+    public class SoldierCollisionSystem : IExecuteSystem
+    {
+        private readonly GameContext _game;
+        private readonly IGroup<GameEntity> _entities;
+
+        public SoldierCollisionSystem()
+        {
+            _game = Contexts.sharedInstance.game;
+
+            _entities = _game.GetGroup();
+        }
+
+        public void Execute()
+        {
+            foreach (GameEntity entity in _entities)
+            {
+                
+            }
+        }
+    }
+}

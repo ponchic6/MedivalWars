@@ -6,8 +6,9 @@ namespace Code.Gameplay.Soldiers.Systems
     {
         public SoldiersFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<SoldierCreateSystem>());
             Add(systemFactory.Create<SoldierMoveSystem>());
+            
+            Add(systemFactory.Create<DestructZeroHpSoldierRs>());
         }
     }
 }

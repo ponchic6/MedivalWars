@@ -37,8 +37,9 @@ namespace Code.Gameplay.EnemyAi.System
             _game.enemyActionCooldownEntity.isEnemyReadyToAction = false;
 
             List<GameEntity> filteredTowers = _game
-                .GetGroup(GameMatcher.AllOf(GameMatcher.TowerFraction, GameMatcher.Tower))
+                .GetGroup(GameMatcher.AllOf(GameMatcher.TowerFraction, GameMatcher.Tower, GameMatcher.UsedRouteCount))
                 .GetEntities()
+                .Where(x => !x.isCatapult)
                 .Where(x => x.towerFraction.Value == TowerFractionsEnum.Red)
                 .Where(x => x.usedRouteCount.Value < x.maxRouteCount.Value)
                 .ToList();
@@ -86,10 +87,9 @@ namespace Code.Gameplay.EnemyAi.System
             
             int obstacleLayerMask = 1 << LayerMask.NameToLayer("Obstacles");
             
-            if (Physics.Raycast(startPos, direction.normalized, out _, distance, obstacleLayerMask))
-                return true;
-            
-            return false;
+            RaycastHit[] hits = Physics.RaycastAll(startPos, direction, distance, obstacleLayerMask);
+
+            return hits.Length != 1;
         }
     }
 }

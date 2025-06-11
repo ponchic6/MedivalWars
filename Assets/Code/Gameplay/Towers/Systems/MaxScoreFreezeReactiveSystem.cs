@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Infrastructure.StaticData;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Towers.Systems
 {
@@ -21,8 +22,8 @@ namespace Code.Gameplay.Towers.Systems
 
         protected override void Execute(List<GameEntity> entities)
         {
-            foreach (GameEntity entity in entities)
-                entity.towerScore.Value = _commonStaticData.maxScore;
+            foreach (GameEntity entity in entities) 
+                entity.ReplaceTowerScore(_commonStaticData.maxScore);
         }
     }
 }

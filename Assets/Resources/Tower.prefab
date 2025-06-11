@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3969186387876593805}
   - component: {fileID: 2734692757664442478}
   - component: {fileID: 7668123658526598975}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 8260011148473290651}
   - component: {fileID: 1229383034320858986}
   - component: {fileID: 9192457446488053390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_A_top_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 2964807040079155707}
   - component: {fileID: 5341048783581758944}
   - component: {fileID: 5051523880442456748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 2136675938799716897}
   - component: {fileID: 3028992800454018436}
   - component: {fileID: 1003691039209812302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_A_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 3051029194836094211}
   - component: {fileID: 2159675541807047334}
   - component: {fileID: 4187294594340410988}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_B_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 3084168694166794812}
   - component: {fileID: 2117519222215949721}
   - component: {fileID: 4217066667914479955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_B_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -740,7 +740,7 @@ GameObject:
   - component: {fileID: 3518993760076923050}
   - component: {fileID: 5446527134846541591}
   - component: {fileID: 7176026626496439354}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_base_neutral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 2605103850790902957}
   - component: {fileID: 1407634038045004552}
   - component: {fileID: 3777426051575785410}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_base_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 4056983946862169199}
   - component: {fileID: 1144643225225626570}
   - component: {fileID: 2884100067301619456}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_base_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: 8141055407842011753}
   - component: {fileID: 7878132933514758110}
   - component: {fileID: 1521824924267678236}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1075,7 +1075,7 @@ GameObject:
   - component: {fileID: 1896315793848785084}
   - component: {fileID: 2971363707103097832}
   - component: {fileID: 7391713243532887134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_B_top_neutral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 8371344504091551410}
   - component: {fileID: 8884184579769275121}
   - component: {fileID: 2265980463735880275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_A_neutral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1248,7 +1248,7 @@ GameObject:
   - component: {fileID: 7150760831982408900}
   - component: {fileID: 3050120014273895090}
   - component: {fileID: 2484044317088090394}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1323,7 +1323,7 @@ GameObject:
   - component: {fileID: 8288522860199685058}
   - component: {fileID: 8025848944672271223}
   - component: {fileID: 7971154104574716486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_B_neutral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1410,7 +1410,7 @@ GameObject:
   - component: {fileID: 5395776510543816017}
   - component: {fileID: 9029292500750396148}
   - component: {fileID: 6533187013020196414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_A_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1497,7 +1497,7 @@ GameObject:
   - component: {fileID: 8709295854269349381}
   - component: {fileID: 6309711599325050082}
   - component: {fileID: 7292874029731186047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_A_top_neutral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1583,7 +1583,7 @@ GameObject:
   - component: {fileID: 8252501677299471913}
   - component: {fileID: 6958821026395190090}
   - component: {fileID: 7283151214991158237}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_A_top_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1669,7 +1669,7 @@ GameObject:
   - component: {fileID: 5097633343644081429}
   - component: {fileID: 4049703934152436654}
   - component: {fileID: 3267357619401466875}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1744,7 +1744,7 @@ GameObject:
   - component: {fileID: 7331464014987906011}
   - component: {fileID: 912543281985840986}
   - component: {fileID: 6284554652121374206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_B_top_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1830,7 +1830,7 @@ GameObject:
   - component: {fileID: 4255694503533820862}
   - component: {fileID: 8247669593444221254}
   - component: {fileID: 6330376135137474560}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1966,7 +1966,7 @@ GameObject:
   - component: {fileID: 6672398119296885716}
   - component: {fileID: 2485274603992625268}
   - component: {fileID: 2230260778786456093}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: building_tower_B_top_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2055,7 +2055,7 @@ GameObject:
   - component: {fileID: 4463757733532745420}
   - component: {fileID: 5945841995431724134}
   - component: {fileID: 1815161424242227911}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2232,6 +2232,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: flag_blue
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 141f36d2fbfdb484f8e60fe6b5a32bd4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2293,6 +2297,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 693cc2cf1bdff614dad06d293693abe8, type: 3}
       propertyPath: m_Name
       value: flag_red
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 693cc2cf1bdff614dad06d293693abe8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -3,6 +3,7 @@
     public enum TowerTypesEnum
     {
         Tower,
-        Catapult
+        Catapult,
+        Hippodrome
     }
 }

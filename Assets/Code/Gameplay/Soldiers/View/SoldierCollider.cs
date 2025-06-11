@@ -20,38 +20,53 @@ namespace Code.Gameplay.Soldiers.View
             if (otherEntityBehavior == null) 
                 return;
 
-            if (otherEntityBehavior.Entity.hasSoldierAttackTowerId && 
-                otherEntityBehavior.Entity.towerFraction.Value != _entityBehaviour.Entity.towerFraction.Value)
+            GameEntity otherEntity = otherEntityBehavior.Entity;
+            GameEntity thisEntity = _entityBehaviour.Entity;
+            
+            if (otherEntity.hasSoldierAttackTowerId && 
+                otherEntity.towerFraction.Value != thisEntity.towerFraction.Value &&
+                otherEntity.soldierTowerOfBirthId.Value == thisEntity.soldierAttackTowerId.Value &&
+                otherEntity.soldierAttackTowerId.Value == thisEntity.soldierTowerOfBirthId.Value)
             {
-                otherEntityBehavior.Entity.isDestructed = true;
-                _entityBehaviour.Entity.isDestructed = true;
-                return;
-            }
-            
-            if (otherEntityBehavior.Entity.id.Value == _entityBehaviour.Entity.soldierTowerOfBirthId.Value)
-                return;
-            
-            if (!otherEntityBehavior.Entity.isTower)
-                return;
-            
-            if (otherEntityBehavior.Entity.towerFraction.Value != _entityBehaviour.Entity.towerFraction.Value)
-            {
-                _entityBehaviour.Entity.isDestructed = true;
-                
-                if (otherEntityBehavior.Entity.towerScore.Value > 0)
-                {
-                    otherEntityBehavior.Entity.towerScore.Value--;
-                    otherEntityBehavior.Entity.ReplaceTowerScore(otherEntityBehavior.Entity.towerScore.Value);
-                }
+                if (otherEntity.isHorseKnight) 
+                    thisEntity.ReplaceSoldierHealth(thisEntity.soldierHealth.Value - 2);
                 else
-                    otherEntityBehavior.Entity.ReplaceTowerFraction(_entityBehaviour.Entity.towerFraction.Value);
+                    thisEntity.ReplaceSoldierHealth(thisEntity.soldierHealth.Value - 1);
+                return;
             }
             
-            if (otherEntityBehavior.Entity.towerFraction.Value == _entityBehaviour.Entity.towerFraction.Value)
+            if (otherEntity.id.Value == thisEntity.soldierTowerOfBirthId.Value)
+                return;
+            
+            if (!otherEntity.isTower)
+                return;
+            
+            if (otherEntity.id.Value != thisEntity.soldierAttackTowerId.Value)
+                return;
+
+            if (otherEntity.towerFraction.Value == thisEntity.towerFraction.Value)
             {
-                _entityBehaviour.Entity.isDestructed = true;
-                otherEntityBehavior.Entity.towerScore.Value++;
-                otherEntityBehavior.Entity.ReplaceTowerScore(otherEntityBehavior.Entity.towerScore.Value);
+                thisEntity.isDestructed = true;
+                
+                if (thisEntity.isHorseKnight) 
+                    otherEntity.ReplaceTowerScore(otherEntity.towerScore.Value + 2);
+                else
+                    otherEntity.ReplaceTowerScore(otherEntity.towerScore.Value + 1);
+            }
+            else
+            {
+                thisEntity.isDestructed = true;
+
+                if (thisEntity.isHorseKnight) 
+                    otherEntity.ReplaceTowerScore(otherEntity.towerScore.Value - 2);
+                else
+                    otherEntity.ReplaceTowerScore(otherEntity.towerScore.Value - 1);
+
+                if (otherEntity.towerScore.Value <= 0)
+                {
+                    otherEntity.ReplaceTowerScore(0);
+                    otherEntity.ReplaceTowerFraction(thisEntity.towerFraction.Value);
+                }
             }
         }
     }
