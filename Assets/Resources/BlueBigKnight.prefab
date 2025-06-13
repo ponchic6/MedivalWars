@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4551265430218545922, guid: 4f898a874ba550c49ba2bca194c5b393, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4746540086322070049, guid: 4f898a874ba550c49ba2bca194c5b393, type: 3}
       propertyPath: m_Name
       value: BlueBigKnight
