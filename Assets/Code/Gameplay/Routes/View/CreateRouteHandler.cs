@@ -52,7 +52,7 @@ namespace Code.Gameplay.Routes.View
         {
             if (_entityBehaviour.Entity.isStartTowerRoutesPoint)
                 return;
-
+            
             if (!_game.isStartTowerRoutesPoint)
                 return;
             

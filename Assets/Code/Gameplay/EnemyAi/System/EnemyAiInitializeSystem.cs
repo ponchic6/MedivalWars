@@ -1,5 +1,6 @@
 using Code.Infrastructure.StaticData;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.EnemyAi.System
 {
@@ -17,7 +18,7 @@ namespace Code.Gameplay.EnemyAi.System
         public void Initialize()
         {
             GameEntity enemyAction = _game.CreateEntity();
-            enemyAction.AddEnemyActionCooldown(_commonStaticData.enemyActionCooldown);
+            enemyAction.AddEnemyActionCooldown(_commonStaticData.fromEnemyActionCooldown + Random.value * _commonStaticData.toEnemyActionCooldown);
         }
     }
 }

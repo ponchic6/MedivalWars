@@ -5,16 +5,16 @@ using UnityEngine;
 
 namespace Code.Gameplay.Routes.Systems
 {
-    public class RouteDestructMarkerBySwapSystem : IExecuteSystem
+    public class RouteDestructMarkerOnSwapSystem : IExecuteSystem
     {
         private readonly GameContext _game;
         private readonly IGroup<GameEntity> _entities;
 
-        public RouteDestructMarkerBySwapSystem()
+        public RouteDestructMarkerOnSwapSystem()
         {
             _game = Contexts.sharedInstance.game;
 
-            _entities = _game.GetGroup(GameMatcher.LeftMouseButtonHold);
+            _entities = _game.GetGroup(GameMatcher.TapHold);
         }
 
         public void Execute()

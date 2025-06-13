@@ -15,7 +15,7 @@ namespace Code.Gameplay.Soldiers.Systems
             _commonStaticData = commonStaticData;
             _game = Contexts.sharedInstance.game;
 
-            _entities = _game.GetGroup(GameMatcher.AllOf(GameMatcher.SoldierAttackTowerId, GameMatcher.Transform));
+            _entities = _game.GetGroup(GameMatcher.AllOf(GameMatcher.SoldierAttackTowerId, GameMatcher.Transform, GameMatcher.SoldierHealth));
         }
 
         public void Execute()
@@ -23,6 +23,16 @@ namespace Code.Gameplay.Soldiers.Systems
             foreach (GameEntity entity in _entities)
             {
                 GameEntity finishTower = _game.GetEntityWithId(entity.soldierAttackTowerId.Value);
+                
+                if (finishTower == null)
+                {
+                    entity.isDestructed = true;
+                    continue;
+                }
+                
+                if (entity.soldierHealth.Value <= 0)
+                    continue;
+                
                 Vector3 direction = (finishTower.transform.Value.position - entity.transform.Value.position).normalized;
                 direction.y = 0;
                 direction = direction.normalized;

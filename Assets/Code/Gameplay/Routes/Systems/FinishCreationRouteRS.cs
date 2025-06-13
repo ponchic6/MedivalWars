@@ -17,7 +17,7 @@ namespace Code.Gameplay.Routes.Systems
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
-            context.CreateCollector(GameMatcher.LeftMouseButtonHold.Removed());
+            context.CreateCollector(GameMatcher.TapHold.Removed());
 
         protected override bool Filter(GameEntity entity) =>
             true;

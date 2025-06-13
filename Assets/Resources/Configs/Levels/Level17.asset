@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c0ae7cde8e45078d2819fd5b46863c, type: 3}
+  m_Name: Level17
+  m_EditorClassIdentifier: 
+  levelObjects:
+  - position: {x: 0.026, y: 0, z: 0.547}
+    towerFraction: 1
+    towerType: 0
+    initialTowerScore: 2
+  - position: {x: 0.729, y: 0, z: 0.43}
+    towerFraction: 2
+    towerType: 0
+    initialTowerScore: 10
+  - position: {x: -0.635, y: 0, z: 0.45}
+    towerFraction: 2
+    towerType: 0
+    initialTowerScore: 10
+  - position: {x: 0.06, y: 0, z: 0.045}
+    towerFraction: 2
+    towerType: 0
+    initialTowerScore: 10
+  - position: {x: 0.642, y: 0, z: -0.768}
+    towerFraction: 2
+    towerType: 0
+    initialTowerScore: 10
+  - position: {x: -0.541, y: 0, z: -0.78}
+    towerFraction: 2
+    towerType: 0
+    initialTowerScore: 10
+  - position: {x: 0.036, y: 0, z: -0.963}
+    towerFraction: 2
+    towerType: 0
+    initialTowerScore: 10
+  - position: {x: 0.027, y: 0, z: -0.572}
+    towerFraction: 0
+    towerType: 0
+    initialTowerScore: 2
+  - position: {x: 0.739, y: 0, z: -0.321}
+    towerFraction: 2
+    towerType: 2
+    initialTowerScore: 64
+  - position: {x: -0.738, y: 0, z: -0.301}
+    towerFraction: 2
+    towerType: 2
+    initialTowerScore: 64
+  obstaclePrefab: {fileID: 2495310423943481959, guid: 1731e4928efd96f48b525c50e581e847, type: 3}

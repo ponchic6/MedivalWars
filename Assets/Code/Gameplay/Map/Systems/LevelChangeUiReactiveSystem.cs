@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Code.Gameplay.Map.Services;
+using Code.Infrastructure.Services;
 using Entitas;
-using TMPro;
 
 namespace Code.Gameplay.Map.Systems
 {
@@ -9,41 +10,37 @@ namespace Code.Gameplay.Map.Systems
     {
         private readonly GameContext _game;
         private readonly ILevelFactory _levelFactory;
+        private readonly ISaveService _saveService;
 
-        public LevelChangeUiReactiveSystem(IContext<GameEntity> context, ILevelFactory levelFactory) : base(context)
+        public LevelChangeUiReactiveSystem(IContext<GameEntity> context, ILevelFactory levelFactory, ISaveService saveService) : base(context)
         {
             _levelFactory = levelFactory;
+            _saveService = saveService;
             _game = Contexts.sharedInstance.game;
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
-            context.CreateCollector(GameMatcher.NextLevelClick.Added(), GameMatcher.PreviousLevelClick.Added());
+            context.CreateCollector(GameMatcher.NextLevelClick.Added(), GameMatcher.PreviousLevelClick.Added(), GameMatcher.HudHandler.Added());
 
         protected override bool Filter(GameEntity entity) =>
             true;
 
         protected override void Execute(List<GameEntity> entities)
         {
-            if (_game.inputEntity.isNextLevelClick)
-            {
-                if (_game.inputEntity.choseLevel.Value >= 9)
-                    _game.ReplaceChoseLevel(9);
-                else
-                    _game.ReplaceChoseLevel(_game.choseLevel.Value + 1);
-            }
-            else if (_game.inputEntity.isPreviousLevelClick)
-            {
-                if (_game.inputEntity.choseLevel.Value <= 0)
-                    _game.ReplaceChoseLevel(0);
-                else
-                    _game.ReplaceChoseLevel(_game.choseLevel.Value - 1);
-            }
-            
-            _game.inputEntity.isNextLevelClick = false;
-            _game.inputEntity.isPreviousLevelClick = false;
-            
+            int maxLevel = _saveService.GetMaxLevel();
+            var input = _game.inputEntity;
+            int currentLevel = _game.choseLevel.Value;
+    
+            if (input.isNextLevelClick)
+                _game.ReplaceChoseLevel(Math.Min(currentLevel + 1, maxLevel));
+            else if (input.isPreviousLevelClick)
+                _game.ReplaceChoseLevel(Math.Max(currentLevel - 1, 0));
+    
+            input.isNextLevelClick = input.isPreviousLevelClick = false;
+    
             _levelFactory.CleanMap();
+            _game.hudCanvasEntity.hudHandler.Value.SetLevelChoosingState();
             _levelFactory.SetDecorLevel(_game.choseLevel.Value);
-        }
+        }    
     }
 }

@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Soldiers.Services;
+﻿using Code.Gameplay.Soldiers;
+using Code.Gameplay.Soldiers.Services;
 using Code.Infrastructure.StaticData;
 using Entitas;
 using UnityEngine;
@@ -29,10 +30,12 @@ namespace Code.Gameplay.Towers.Systems
                 {
                     if (entity.towerRouteIdList.Value.Count == 0)
                         continue;
-                    
+
                     RefreshCreationCooldown(entity);
+                    
+                    SoldierType soldierType = entity.isHippodrome ? SoldierType.HorseKnight : SoldierType.Knight;
                     foreach (int routeId in entity.towerRouteIdList.Value) 
-                        _soldierFactory.CreateSoldier(entity, routeId);
+                        _soldierFactory.CreateSoldier(entity, soldierType, routeId);
                 }
                 
                 entity.soldierCreationCooldown.Value -= Time.deltaTime;

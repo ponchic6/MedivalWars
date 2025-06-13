@@ -1,0 +1,30 @@
+﻿using Code.Infrastructure.StaticData;
+using UnityEngine;
+
+namespace Code.Infrastructure.Services
+{
+    public class SaveService : ISaveService
+    {
+        private readonly CommonStaticData _commonStaticData;
+
+        public SaveService(CommonStaticData commonStaticData)
+        {
+            _commonStaticData = commonStaticData;
+            SetMaxLevel(_commonStaticData.levels.Count - 1);
+        }
+        
+        public int GetMaxLevel() =>
+            PlayerPrefs.GetInt("MaxLevel");
+
+        public void SetMaxLevel(int value)
+        {
+            if (_commonStaticData.levels.Count - 1 < value)
+            {
+                Debug.LogWarning("SetMaxLevel too much");
+                return;
+            }
+            
+            PlayerPrefs.SetInt("MaxLevel", value);
+        }
+    }
+}

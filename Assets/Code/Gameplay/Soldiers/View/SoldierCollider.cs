@@ -6,17 +6,11 @@ namespace Code.Gameplay.Soldiers.View
     public class SoldierCollider : MonoBehaviour
     {
         [SerializeField] private EntityBehaviour _entityBehaviour;
-        private GameContext _game;
-
-        private void Awake()
-        {
-            _game = Contexts.sharedInstance.game;
-        }
 
         private void OnTriggerEnter(Collider other)
         {
-            other.TryGetComponent<EntityBehaviour>(out var otherEntityBehavior);
-            
+            EntityBehaviour otherEntityBehavior = other.GetComponentInParent<EntityBehaviour>();
+
             if (otherEntityBehavior == null) 
                 return;
 
@@ -46,8 +40,9 @@ namespace Code.Gameplay.Soldiers.View
 
             if (otherEntity.towerFraction.Value == thisEntity.towerFraction.Value)
             {
-                thisEntity.isDestructed = true;
-                
+                thisEntity.ReplaceSoldierHealth(thisEntity.soldierHealth.Value - 2);
+                otherEntity.ReplaceLastArrivedKnightType(thisEntity.isHorseKnight ? SoldierType.HorseKnight : SoldierType.Knight);
+
                 if (thisEntity.isHorseKnight) 
                     otherEntity.ReplaceTowerScore(otherEntity.towerScore.Value + 2);
                 else
@@ -55,7 +50,8 @@ namespace Code.Gameplay.Soldiers.View
             }
             else
             {
-                thisEntity.isDestructed = true;
+                thisEntity.ReplaceSoldierHealth(thisEntity.soldierHealth.Value - 2);
+                otherEntity.ReplaceLastArrivedKnightType(thisEntity.isHorseKnight ? SoldierType.HorseKnight : SoldierType.Knight);
 
                 if (thisEntity.isHorseKnight) 
                     otherEntity.ReplaceTowerScore(otherEntity.towerScore.Value - 2);

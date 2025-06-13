@@ -23,7 +23,7 @@ namespace Code.Gameplay.Towers.Systems
             context.CreateCollector(GameMatcher.TowerScore);
 
         protected override bool Filter(GameEntity entity) =>
-            entity.towerScore.Value > _commonStaticData.maxScore && !entity.isCatapult;
+            entity.hasTowerScore && entity.towerScore.Value > _commonStaticData.maxScore && !entity.isCatapult;
 
         protected override void Execute(List<GameEntity> entities)
         {
@@ -32,7 +32,10 @@ namespace Code.Gameplay.Towers.Systems
                 if (entity.towerRouteIdList.Value.Count == 0)
                     continue;
                 
-                _soldierFactory.CreateSoldier(entity, entity.towerRouteIdList.Value[_random.Next(entity.towerRouteIdList.Value.Count)]);
+                if (!entity.hasLastArrivedKnightType)
+                    continue;
+                
+                _soldierFactory.CreateSoldier(entity, entity.lastArrivedKnightType.Value, entity.towerRouteIdList.Value[_random.Next(entity.towerRouteIdList.Value.Count)]);
             }
         }
     }

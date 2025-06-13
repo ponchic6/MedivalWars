@@ -1,0 +1,53 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using Code.Gameplay.Towers;
+using Code.Infrastructure.Services;
+using Entitas;
+
+namespace Code.Gameplay.UI.Systems
+{
+    public class VictoryCheckReactiveSystem : ReactiveSystem<GameEntity>
+    {
+        private readonly GameContext _game;
+        private readonly ISaveService _saveService;
+
+        public VictoryCheckReactiveSystem(IContext<GameEntity> context, ISaveService saveService) : base(context)
+        {
+            _saveService = saveService;
+            _game = Contexts.sharedInstance.game;
+        }
+
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
+            context.CreateCollector(GameMatcher.TowerFraction);
+
+        protected override bool Filter(GameEntity entity) =>
+            entity.isTower;
+
+        protected override void Execute(List<GameEntity> entities)
+        {
+            GameEntity canvasEntity = _game.hudCanvasEntity;
+            IGroup<GameEntity> towerFractionEntities = _game.GetGroup(GameMatcher.AllOf(GameMatcher.TowerFraction, GameMatcher.Tower));
+
+            if (HasJustBlueFraction(towerFractionEntities))
+            {
+                canvasEntity.hudHandler.Value.SetVictoryState();
+                
+                int maxLevel = _saveService.GetMaxLevel();
+                int currentLevel = _game.inputEntity.choseLevel.Value;
+                if (currentLevel < maxLevel)
+                    return;
+                
+                maxLevel++;
+                _saveService.SetMaxLevel(maxLevel);
+            }
+            else if (HasJustOtherFraction(towerFractionEntities)) 
+                canvasEntity.hudHandler.Value.ShowDefeatHud();
+        }
+
+        private bool HasJustBlueFraction(IGroup<GameEntity> entities) =>
+            entities.GetEntities().All(entity => entity.towerFraction.Value == TowerFractionsEnum.Blue);
+
+        private bool HasJustOtherFraction(IGroup<GameEntity> entities) =>
+            entities.GetEntities().All(entity => entity.towerFraction.Value != TowerFractionsEnum.Blue);
+    }
+}

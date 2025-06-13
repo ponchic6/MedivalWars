@@ -1,4 +1,6 @@
-﻿using Code.Infrastructure.StaticData;
+﻿using Code.Gameplay.Input.Services;
+using Code.Infrastructure.Services;
+using Code.Infrastructure.StaticData;
 using Entitas;
 using UnityEngine;
 
@@ -9,10 +11,14 @@ namespace Code.Gameplay.Routes.Systems
         private readonly GameContext _game;
         private readonly IGroup<GameEntity> _entities;
         private readonly CommonStaticData _commonStaticData;
+        private readonly ICameraProvider _cameraProvider;
+        private readonly IScreenTapService _screenTapService;
 
-        public RouteDragSystem(CommonStaticData commonStaticData)
+        public RouteDragSystem(CommonStaticData commonStaticData, ICameraProvider cameraProvider, IScreenTapService screenTapService)
         {
             _commonStaticData = commonStaticData;
+            _cameraProvider = cameraProvider;
+            _screenTapService = screenTapService;
             _game = Contexts.sharedInstance.game;
             _entities = _game.GetGroup(GameMatcher.AllOf(GameMatcher.RouteStartId, GameMatcher.LineRenderer).NoneOf(GameMatcher.RouteFinishId));
         }
@@ -23,8 +29,14 @@ namespace Code.Gameplay.Routes.Systems
             {
                 GameEntity startTower = _game.GetEntityWithId(entity.routeStartId.Value);
                 Vector3 startPosition = startTower.transform.Value.position + Vector3.up * _commonStaticData.verticalRouteOffset;
-                Vector3 endPosition = GetGroundIntersect();
+
+                Vector3 endPosition;
                 
+                if (_game.isFinishTowerRoutesPoint) 
+                    endPosition = _game.finishTowerRoutesPointEntity.transform.Value.position + Vector3.up * _commonStaticData.verticalRouteOffset;
+                else
+                    endPosition = GetGroundIntersect();
+
                 entity.lineRenderer.Value.SetPosition(0, startPosition);
                 entity.lineRenderer.Value.SetPosition(1, endPosition);
                 
@@ -35,9 +47,7 @@ namespace Code.Gameplay.Routes.Systems
 
         private Vector3 GetGroundIntersect()
         {
-            Camera playerCamera = Camera.main;
-            Vector3 mousePosition = UnityEngine.Input.mousePosition;
-            Ray ray = playerCamera.ScreenPointToRay(mousePosition);
+            Ray ray = _cameraProvider.GetMainCamera().ScreenPointToRay(_screenTapService.GetScreenTap);
                 
             float rayLength = (0f - ray.origin.y) / ray.direction.y;
         

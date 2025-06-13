@@ -19,27 +19,27 @@ namespace Code.Gameplay.Soldiers.Services
             _game = Contexts.sharedInstance.game;
         }
         
-        public void CreateSoldier(GameEntity startTower, int routeId)
+        public void CreateSoldier(GameEntity startTower, SoldierType value, int routeId)
         {
             GameEntity route = _game.GetEntityWithId(routeId);
             GameEntity soldier = _game.CreateEntity();
             soldier.AddId(_identifierService.Next());
             soldier.AddTowerFraction(startTower.towerFraction.Value);
             
-            if (startTower.towerFraction.Value == TowerFractionsEnum.Red && !startTower.isHippodrome)
+            if (startTower.towerFraction.Value == TowerFractionsEnum.Red && value == SoldierType.Knight)
                 soldier.AddViewPrefab(_commonStaticData.redSoldierPrefab);
-            else if (startTower.towerFraction.Value == TowerFractionsEnum.Red && startTower.isHippodrome)
+            else if (startTower.towerFraction.Value == TowerFractionsEnum.Red && value == SoldierType.HorseKnight)
                 soldier.AddViewPrefab(_commonStaticData.redHorseKnightPrefab);
-            else if (startTower.towerFraction.Value == TowerFractionsEnum.Blue && !startTower.isHippodrome)
+            else if (startTower.towerFraction.Value == TowerFractionsEnum.Blue && value == SoldierType.Knight)
                 soldier.AddViewPrefab(_commonStaticData.blueSoldierPrefab);
-            else if (startTower.towerFraction.Value == TowerFractionsEnum.Blue && startTower.isHippodrome)
+            else if (startTower.towerFraction.Value == TowerFractionsEnum.Blue && value == SoldierType.HorseKnight)
                 soldier.AddViewPrefab(_commonStaticData.blueHorseKnightPrefab);
 
             soldier.AddSoldierTowerOfBirthId(startTower.id.Value);
             soldier.AddInitialTransform(startTower.transform.Value.position + _commonStaticData.verticalRouteOffset * Vector3.up, Quaternion.identity);
             soldier.AddSoldierAttackTowerId(route.routeFinishId.Value);
-            soldier.AddSoldierHealth(startTower.isHippodrome ? 2 : 1);
-            soldier.isHorseKnight = startTower.isHippodrome;
+            soldier.AddSoldierHealth(value == SoldierType.HorseKnight ? 2 : 1);
+            soldier.isHorseKnight = value == SoldierType.HorseKnight;
         }
     }
 }

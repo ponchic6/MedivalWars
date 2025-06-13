@@ -25,7 +25,8 @@ namespace Code.Infrastructure.StaticData
         public float soldierCreationCooldownSecondLevel;
         public float soldierMoveSpeed;
         public float verticalRouteOffset;
-        public float enemyActionCooldown;
+        public float fromEnemyActionCooldown;
+        public float toEnemyActionCooldown;
         public float catapultCooldownZeroLevel;
         public float catapultCooldownFirstLevel;
         public float catapultCooldownSecondLevel;

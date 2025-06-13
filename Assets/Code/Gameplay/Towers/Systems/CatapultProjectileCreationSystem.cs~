@@ -64,7 +64,7 @@ namespace Code.Gameplay.Towers.Systems
         private GameEntity GetTarget(GameEntity entity)
         {
             var entities = _game
-                .GetGroup(GameMatcher.TowerFraction)
+                .GetGroup(GameMatcher.AllOf(GameMatcher.TowerFraction, GameMatcher.Transform))
                 .GetEntities(_targetsBuffer);
     
             float catapultRange = entity.towerLevel.Value switch

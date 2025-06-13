@@ -2,6 +2,6 @@
 {
     public interface ISoldierFactory
     {
-        public void CreateSoldier(GameEntity startTower, int routeId);
+        public void CreateSoldier(GameEntity startTower, SoldierType type, int routeId);
     }
 }

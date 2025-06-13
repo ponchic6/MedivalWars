@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using Code.Gameplay.Map.Services;
+using Code.Infrastructure.Services;
+using Entitas;
+
+namespace Code.Gameplay.Map.Systems
+{
+    public class LevelChangeUiReactiveSystem : ReactiveSystem<GameEntity>
+    {
+        private readonly GameContext _game;
+        private readonly ILevelFactory _levelFactory;
+        private readonly ISaveService _saveService;
+
+        public LevelChangeUiReactiveSystem(IContext<GameEntity> context, ILevelFactory levelFactory, ISaveService saveService) : base(context)
+        {
+            _levelFactory = levelFactory;
+            _saveService = saveService;
+            _game = Contexts.sharedInstance.game;
+        }
+
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
+            context.CreateCollector(GameMatcher.NextLevelClick.Added(), GameMatcher.PreviousLevelClick.Added());
+
+        protected override bool Filter(GameEntity entity) =>
+            true;
+
+        protected override void Execute(List<GameEntity> entities)
+        {
+            int maxLevel = _saveService.GetMaxLevel();
+            var input = _game.inputEntity;
+            int currentLevel = _game.choseLevel.Value;
+    
+            if (input.isNextLevelClick)
+                _game.ReplaceChoseLevel(Math.Min(currentLevel + 1, maxLevel));
+            else if (input.isPreviousLevelClick)
+                _game.ReplaceChoseLevel(Math.Max(currentLevel - 1, 0));
+    
+            input.isNextLevelClick = input.isPreviousLevelClick = false;
+    
+            _levelFactory.CleanMap();
+            _game.hudCanvasEntity.hudHandler.Value.SetLevelChoosingState();
+            _levelFactory.SetDecorLevel(_game.choseLevel.Value);
+        }    
+    }
+}

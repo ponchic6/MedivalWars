@@ -33,11 +33,11 @@ namespace Code.Gameplay.EnemyAi.System
 
         protected override void Execute(List<GameEntity> entities)
         {
-            _game.enemyActionCooldownEntity.ReplaceEnemyActionCooldown(_commonStaticData.enemyActionCooldown);
+            _game.enemyActionCooldownEntity.ReplaceEnemyActionCooldown(_commonStaticData.fromEnemyActionCooldown + UnityEngine.Random.value * _commonStaticData.toEnemyActionCooldown);
             _game.enemyActionCooldownEntity.isEnemyReadyToAction = false;
 
             List<GameEntity> filteredTowers = _game
-                .GetGroup(GameMatcher.AllOf(GameMatcher.TowerFraction, GameMatcher.Tower, GameMatcher.UsedRouteCount))
+                .GetGroup(GameMatcher.AllOf(GameMatcher.TowerFraction, GameMatcher.Tower, GameMatcher.UsedRouteCount, GameMatcher.MaxRouteCount))
                 .GetEntities()
                 .Where(x => !x.isCatapult)
                 .Where(x => x.towerFraction.Value == TowerFractionsEnum.Red)
@@ -62,6 +62,12 @@ namespace Code.Gameplay.EnemyAi.System
                         if (_game.GetEntityWithId(routeId).routeFinishId.Value == x.id.Value)
                             return false;
                     }
+
+                    if (x.hasTowerRouteIdList)
+                        foreach (int routeId in x.towerRouteIdList.Value)
+                            if (_game.GetEntityWithId(routeId).routeFinishId.Value == randomEnemyTower.id.Value) 
+                                return false;
+
                     return true;
                 })
                 .Where(x => !HasObstacleBetween(randomEnemyTower, x))

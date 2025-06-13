@@ -76,7 +76,6 @@ namespace Code.Gameplay.Levels
             
             // Создаем ScriptableObject
             LevelConfig config = ScriptableObject.CreateInstance<LevelConfig>();
-            config.levelName = levelName;
             
             // Заполняем данными
             foreach (var marker in foundMarkers)

@@ -85,6 +85,9 @@ namespace Code.Gameplay.Towers.Systems
                 if (target.towerFraction.Value == catapultFraction || Vector3.Distance(catapultPos, target.transform.Value.position) >= catapultRange)
                     continue;
                 
+                if (target.hasSoldierHealth && target.soldierHealth.Value <= 0)
+                    continue;
+                
                 validTargetsCount++;
                 if (_random.Next(validTargetsCount) == 0) 
                     selectedTarget = target;

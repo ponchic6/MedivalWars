@@ -7,6 +7,8 @@ namespace Code.Infrastructure.Destroy
     {
         public DestroyFeature(ISystemFactory systemFactory)
         {
+            Add(systemFactory.Create<SelfDestructTimerSystem>());
+            
             Add(systemFactory.Create<CleanupGameDestructedViewSystem>());
             Add(systemFactory.Create<CleanupGameDestructedSystem>());
         }

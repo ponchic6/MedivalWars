@@ -6,15 +6,10 @@ namespace Code.Gameplay.Soldiers.View
     public class SoldierCollider : MonoBehaviour
     {
         [SerializeField] private EntityBehaviour _entityBehaviour;
-        private GameContext _game;
-
-        private void Awake()
-        {
-            _game = Contexts.sharedInstance.game;
-        }
 
         private void OnTriggerEnter(Collider other)
         {
+            Debug.Log(other.gameObject);
             other.TryGetComponent<EntityBehaviour>(out var otherEntityBehavior);
             
             if (otherEntityBehavior == null) 
@@ -25,7 +20,8 @@ namespace Code.Gameplay.Soldiers.View
             
             if (otherEntity.hasSoldierAttackTowerId && 
                 otherEntity.towerFraction.Value != thisEntity.towerFraction.Value &&
-                otherEntity.soldierTowerOfBirthId.Value == thisEntity.soldierAttackTowerId.Value)
+                otherEntity.soldierTowerOfBirthId.Value == thisEntity.soldierAttackTowerId.Value &&
+                otherEntity.soldierAttackTowerId.Value == thisEntity.soldierTowerOfBirthId.Value)
             {
                 if (otherEntity.isHorseKnight) 
                     thisEntity.ReplaceSoldierHealth(thisEntity.soldierHealth.Value - 2);
@@ -45,8 +41,9 @@ namespace Code.Gameplay.Soldiers.View
 
             if (otherEntity.towerFraction.Value == thisEntity.towerFraction.Value)
             {
-                thisEntity.isDestructed = true;
-                
+                thisEntity.ReplaceSoldierHealth(thisEntity.soldierHealth.Value - 2);
+                otherEntity.ReplaceLastArrivedKnightType(thisEntity.isHorseKnight ? SoldierType.HorseKnight : SoldierType.Knight);
+
                 if (thisEntity.isHorseKnight) 
                     otherEntity.ReplaceTowerScore(otherEntity.towerScore.Value + 2);
                 else
@@ -54,7 +51,8 @@ namespace Code.Gameplay.Soldiers.View
             }
             else
             {
-                thisEntity.isDestructed = true;
+                thisEntity.ReplaceSoldierHealth(thisEntity.soldierHealth.Value - 2);
+                otherEntity.ReplaceLastArrivedKnightType(thisEntity.isHorseKnight ? SoldierType.HorseKnight : SoldierType.Knight);
 
                 if (thisEntity.isHorseKnight) 
                     otherEntity.ReplaceTowerScore(otherEntity.towerScore.Value - 2);

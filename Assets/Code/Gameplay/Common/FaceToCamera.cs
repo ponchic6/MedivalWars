@@ -1,24 +1,28 @@
-﻿using UnityEngine;
+﻿using Code.Infrastructure.Services;
+using UnityEngine;
+using Zenject;
 
 namespace Code.Gameplay.Common
 {
     public class FaceToCamera : MonoBehaviour
     {
-        private Camera _targetCamera;
+        private ICameraProvider _cameraProvider;
 
-        private void Start()
+        [Inject]
+        public void Construct(ICameraProvider cameraProvider)
         {
-            if (_targetCamera == null)
-                _targetCamera = Camera.main;
+            _cameraProvider = cameraProvider;
         }
-
+        
         private void Update()
         {
-            if (_targetCamera == null)
+            Camera mainCamera = _cameraProvider.GetMainCamera();
+            
+            if (mainCamera == null)
                 return;
             
-            transform.LookAt(transform.position + _targetCamera.transform.rotation * Vector3.forward,
-                _targetCamera.transform.rotation * Vector3.up);
+            transform.LookAt(transform.position + mainCamera.transform.rotation * Vector3.forward,
+                mainCamera.transform.rotation * Vector3.up);
         }
     }
 }

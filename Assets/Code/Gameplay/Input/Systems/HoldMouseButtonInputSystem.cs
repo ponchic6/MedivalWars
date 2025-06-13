@@ -18,8 +18,7 @@ namespace Code.Gameplay.Input.Systems
         {
             foreach (GameEntity entity in _entities)
             {
-                entity.isLeftMouseButtonHold = UnityEngine.Input.GetMouseButton(0);
-                entity.isRightMouseButtonHold = UnityEngine.Input.GetMouseButton(1);
+                entity.isTapHold = UnityEngine.Input.GetMouseButton(0);
             }
         }
     }

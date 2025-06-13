@@ -4,8 +4,7 @@ using Entitas.CodeGeneration.Attributes;
 namespace Code.Gameplay.Input
 {
     [Game, Unique] public class Input : IComponent { }
-    [Game, Unique] public class LeftMouseButtonHold : IComponent { }
-    [Game, Unique] public class RightMouseButtonHold : IComponent { }
+    [Game, Unique] public class TapHold : IComponent { }
     [Game, Unique] public class PlayClick : IComponent { }
     [Game, Unique] public class NextLevelClick : IComponent { }
     [Game, Unique] public class PreviousLevelClick : IComponent { }

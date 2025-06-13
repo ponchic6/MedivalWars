@@ -38,7 +38,6 @@ namespace Code.Gameplay.Map.Services
             
             GameEntity obstacleEntity = _game.CreateEntity();
             obstacleEntity.AddId(_identifierService.Next());
-            obstacleEntity.AddInitialTransform(obstaclePrefab.transform.position, Quaternion.Euler(0, -60, -0));
             obstacleEntity.isObstacle = true;
             obstacleEntity.AddViewPrefab(obstaclePrefab);
         }
@@ -57,14 +56,13 @@ namespace Code.Gameplay.Map.Services
             
             GameEntity obstacleEntity = _game.CreateEntity();
             obstacleEntity.AddId(_identifierService.Next());
-            obstacleEntity.AddInitialTransform(obstaclePrefab.transform.position, Quaternion.Euler(0, -60, -0));
             obstacleEntity.isObstacle = true;
             obstacleEntity.AddViewPrefab(obstaclePrefab);
         }
 
         public void RestartLevel() => 
             StartLevel(_game.choseLevel.Value);
-
+        
         public void CleanMap()
         {
             IGroup<GameEntity> routes = _game.GetGroup(GameMatcher.Route);

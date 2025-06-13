@@ -59,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -231,7 +231,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539969417150002951}
-  - component: {fileID: 342091288960200945}
   - component: {fileID: 5313369092352103414}
   - component: {fileID: 4665519136035442161}
   - component: {fileID: 4806499500875367959}
@@ -274,27 +273,6 @@ Transform:
   - {fileID: 4421010073812371107}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &342091288960200945
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634904461289616388}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.19, y: 0.28, z: 0.19}
-  m_Center: {x: 0, y: 0.13, z: 0}
 --- !u!54 &5313369092352103414
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -479,6 +457,7 @@ GameObject:
   - component: {fileID: 2136675938799716897}
   - component: {fileID: 3028992800454018436}
   - component: {fileID: 1003691039209812302}
+  - component: {fileID: 6617537073360337066}
   m_Layer: 6
   m_Name: building_tower_A_red
   m_TagString: Untagged
@@ -555,6 +534,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &6617537073360337066
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652029271108505755}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.100001365
+  m_Height: 0.42
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.17, z: 0.0043986402}
 --- !u!1 &2385991151917037497
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +568,7 @@ GameObject:
   - component: {fileID: 3051029194836094211}
   - component: {fileID: 2159675541807047334}
   - component: {fileID: 4187294594340410988}
+  - component: {fileID: 339915212497599783}
   m_Layer: 6
   m_Name: building_tower_B_red
   m_TagString: Untagged
@@ -642,6 +645,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &339915212497599783
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2385991151917037497}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2592009, y: 0.29520947, z: 0.28189358}
+  m_Center: {x: -0.000000014901161, y: 0.1476047, z: 0.01134634}
 --- !u!1 &2415895029257169030
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +677,7 @@ GameObject:
   - component: {fileID: 3084168694166794812}
   - component: {fileID: 2117519222215949721}
   - component: {fileID: 4217066667914479955}
+  - component: {fileID: 8539847523738539991}
   m_Layer: 6
   m_Name: building_tower_B_blue
   m_TagString: Untagged
@@ -729,6 +754,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8539847523738539991
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2415895029257169030}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2592009, y: 0.29520947, z: 0.28189358}
+  m_Center: {x: -0.000000014901161, y: 0.1476047, z: 0.01134634}
 --- !u!1 &2898628252878529149
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +786,7 @@ GameObject:
   - component: {fileID: 3518993760076923050}
   - component: {fileID: 5446527134846541591}
   - component: {fileID: 7176026626496439354}
+  - component: {fileID: 4581786865868831408}
   m_Layer: 6
   m_Name: building_tower_base_neutral
   m_TagString: Untagged
@@ -815,6 +862,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &4581786865868831408
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898628252878529149}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.100001365
+  m_Height: 0.36
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.13500002, z: 0.0043986402}
 --- !u!1 &3417353103930066455
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,6 +896,7 @@ GameObject:
   - component: {fileID: 2605103850790902957}
   - component: {fileID: 1407634038045004552}
   - component: {fileID: 3777426051575785410}
+  - component: {fileID: 8392879326893934891}
   m_Layer: 6
   m_Name: building_tower_base_red
   m_TagString: Untagged
@@ -902,6 +973,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &8392879326893934891
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3417353103930066455}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.100001365
+  m_Height: 0.36
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.13500002, z: 0.0043986402}
 --- !u!1 &3676799642049107669
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,6 +1007,7 @@ GameObject:
   - component: {fileID: 4056983946862169199}
   - component: {fileID: 1144643225225626570}
   - component: {fileID: 2884100067301619456}
+  - component: {fileID: 5255950464079700906}
   m_Layer: 6
   m_Name: building_tower_base_blue
   m_TagString: Untagged
@@ -989,6 +1084,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &5255950464079700906
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676799642049107669}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.100001365
+  m_Height: 0.36
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.13500002, z: 0.0043986402}
 --- !u!1 &3895407736495107321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,6 +1279,7 @@ GameObject:
   - component: {fileID: 8371344504091551410}
   - component: {fileID: 8884184579769275121}
   - component: {fileID: 2265980463735880275}
+  - component: {fileID: 4896098580923397631}
   m_Layer: 6
   m_Name: building_tower_A_neutral
   m_TagString: Untagged
@@ -1237,6 +1356,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &4896098580923397631
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034597074092310566}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.100001365
+  m_Height: 0.42
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.17, z: 0.0043986402}
 --- !u!1 &4167645857013626283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1465,7 @@ GameObject:
   - component: {fileID: 8288522860199685058}
   - component: {fileID: 8025848944672271223}
   - component: {fileID: 7971154104574716486}
+  - component: {fileID: 4825907375431896211}
   m_Layer: 6
   m_Name: building_tower_B_neutral
   m_TagString: Untagged
@@ -1399,6 +1542,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4825907375431896211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4487110505924612469}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2592009, y: 0.29520947, z: 0.28189358}
+  m_Center: {x: -0.000000014901161, y: 0.1476047, z: 0.01134634}
 --- !u!1 &4731724691116146667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1574,7 @@ GameObject:
   - component: {fileID: 5395776510543816017}
   - component: {fileID: 9029292500750396148}
   - component: {fileID: 6533187013020196414}
+  - component: {fileID: 8254320307794614545}
   m_Layer: 6
   m_Name: building_tower_A_blue
   m_TagString: Untagged
@@ -1486,6 +1651,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &8254320307794614545
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4731724691116146667}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.100001365
+  m_Height: 0.42
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.17, z: 0.0043986402}
 --- !u!1 &5486470689205153386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1878,7 +2066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

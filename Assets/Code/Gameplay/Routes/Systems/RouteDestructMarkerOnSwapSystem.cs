@@ -1,4 +1,6 @@
-﻿using Code.Gameplay.Towers;
+﻿using Code.Gameplay.Input.Services;
+using Code.Gameplay.Towers;
+using Code.Infrastructure.Services;
 using Code.Infrastructure.View;
 using Entitas;
 using UnityEngine;
@@ -7,14 +9,18 @@ namespace Code.Gameplay.Routes.Systems
 {
     public class RouteDestructMarkerOnSwapSystem : IExecuteSystem
     {
+        private readonly ICameraProvider _cameraProvider;
+        private readonly IScreenTapService _screenTapService;
         private readonly GameContext _game;
         private readonly IGroup<GameEntity> _entities;
 
-        public RouteDestructMarkerOnSwapSystem()
+        public RouteDestructMarkerOnSwapSystem(ICameraProvider cameraProvider, IScreenTapService screenTapService)
         {
+            _cameraProvider = cameraProvider;
+            _screenTapService = screenTapService;
             _game = Contexts.sharedInstance.game;
 
-            _entities = _game.GetGroup(GameMatcher.LeftMouseButtonHold);
+            _entities = _game.GetGroup(GameMatcher.TapHold);
         }
 
         public void Execute()
@@ -54,7 +60,7 @@ namespace Code.Gameplay.Routes.Systems
 
         private bool Intersected(out RaycastHit[] hits)
         {
-            Ray ray = Camera.main.ScreenPointToRay(UnityEngine.Input.mousePosition);
+            Ray ray = _cameraProvider.GetMainCamera().ScreenPointToRay(_screenTapService.GetScreenTap);
 
             hits = Physics.RaycastAll(ray);
        

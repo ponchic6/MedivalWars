@@ -15,53 +15,55 @@ public static class GameComponentsLookup {
     public const int EnemyReadyToAction = 4;
     public const int ChoseLevel = 5;
     public const int Input = 6;
-    public const int LeftMouseButtonHold = 7;
-    public const int MapRestartClick = 8;
-    public const int NextLevelClick = 9;
-    public const int PlayClick = 10;
-    public const int PreviousLevelClick = 11;
-    public const int RightMouseButtonHold = 12;
-    public const int FinishTowerRoutesPoint = 13;
-    public const int Route = 14;
-    public const int RouteDistance = 15;
-    public const int RouteFinishId = 16;
-    public const int RouteIntersectingObstacle = 17;
-    public const int RouteReady = 18;
-    public const int RoutesColorController = 19;
-    public const int RouteStartId = 20;
-    public const int StartTowerRoutesPoint = 21;
-    public const int HorseKnight = 22;
-    public const int SoldierAttackTowerId = 23;
+    public const int MapRestartClick = 7;
+    public const int NextLevelClick = 8;
+    public const int PlayClick = 9;
+    public const int PreviousLevelClick = 10;
+    public const int TapHold = 11;
+    public const int FinishTowerRoutesPoint = 12;
+    public const int Route = 13;
+    public const int RouteDistance = 14;
+    public const int RouteFinishId = 15;
+    public const int RouteIntersectingObstacle = 16;
+    public const int RouteReady = 17;
+    public const int RoutesColorController = 18;
+    public const int RouteStartId = 19;
+    public const int StartTowerRoutesPoint = 20;
+    public const int HorseKnight = 21;
+    public const int SoldierAttackTowerId = 22;
+    public const int SoldierDeathView = 23;
     public const int SoldierHealth = 24;
     public const int SoldierTowerOfBirthId = 25;
     public const int Catapult = 26;
     public const int CatapultShootingCooldown = 27;
     public const int Hippodrome = 28;
-    public const int MaxRouteCount = 29;
-    public const int Obstacle = 30;
-    public const int Projectile = 31;
-    public const int ProjectileTargetId = 32;
-    public const int SoldierCreationCooldown = 33;
-    public const int Tower = 34;
-    public const int TowerFraction = 35;
-    public const int TowerFractionColorController = 36;
-    public const int TowerLevel = 37;
-    public const int TowerLevelViewController = 38;
-    public const int TowerRouteIdList = 39;
-    public const int TowerScore = 40;
-    public const int TowerScoreIncreasingCooldown = 41;
-    public const int TowerUiView = 42;
-    public const int UsedRouteCount = 43;
-    public const int HudCanvas = 44;
-    public const int HudHandler = 45;
-    public const int Destructed = 46;
-    public const int InitialTransform = 47;
-    public const int View = 48;
-    public const int ViewPath = 49;
-    public const int ViewPrefab = 50;
-    public const int ViewPrefabWithParent = 51;
+    public const int LastArrivedKnightType = 29;
+    public const int MaxRouteCount = 30;
+    public const int Obstacle = 31;
+    public const int Projectile = 32;
+    public const int ProjectileTargetId = 33;
+    public const int SoldierCreationCooldown = 34;
+    public const int Tower = 35;
+    public const int TowerFraction = 36;
+    public const int TowerFractionColorController = 37;
+    public const int TowerLevel = 38;
+    public const int TowerLevelViewController = 39;
+    public const int TowerRouteIdList = 40;
+    public const int TowerScore = 41;
+    public const int TowerScoreIncreasingCooldown = 42;
+    public const int TowerUiView = 43;
+    public const int UsedRouteCount = 44;
+    public const int HudCanvas = 45;
+    public const int HudHandler = 46;
+    public const int Destructed = 47;
+    public const int SelfDestructTimer = 48;
+    public const int InitialTransform = 49;
+    public const int View = 50;
+    public const int ViewPath = 51;
+    public const int ViewPrefab = 52;
+    public const int ViewPrefabWithParent = 53;
 
-    public const int TotalComponents = 52;
+    public const int TotalComponents = 54;
 
     public static readonly string[] componentNames = {
         "Id",
@@ -71,12 +73,11 @@ public static class GameComponentsLookup {
         "EnemyReadyToAction",
         "ChoseLevel",
         "Input",
-        "LeftMouseButtonHold",
         "MapRestartClick",
         "NextLevelClick",
         "PlayClick",
         "PreviousLevelClick",
-        "RightMouseButtonHold",
+        "TapHold",
         "FinishTowerRoutesPoint",
         "Route",
         "RouteDistance",
@@ -88,11 +89,13 @@ public static class GameComponentsLookup {
         "StartTowerRoutesPoint",
         "HorseKnight",
         "SoldierAttackTowerId",
+        "SoldierDeathView",
         "SoldierHealth",
         "SoldierTowerOfBirthId",
         "Catapult",
         "CatapultShootingCooldown",
         "Hippodrome",
+        "LastArrivedKnightType",
         "MaxRouteCount",
         "Obstacle",
         "Projectile",
@@ -111,6 +114,7 @@ public static class GameComponentsLookup {
         "HudCanvas",
         "HudHandler",
         "Destructed",
+        "SelfDestructTimer",
         "InitialTransform",
         "View",
         "ViewPath",
@@ -126,12 +130,11 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.EnemyAi.EnemyReadyToAction),
         typeof(Code.Gameplay.Input.ChoseLevel),
         typeof(Code.Gameplay.Input.Input),
-        typeof(Code.Gameplay.Input.LeftMouseButtonHold),
         typeof(Code.Gameplay.Input.MapRestartClick),
         typeof(Code.Gameplay.Input.NextLevelClick),
         typeof(Code.Gameplay.Input.PlayClick),
         typeof(Code.Gameplay.Input.PreviousLevelClick),
-        typeof(Code.Gameplay.Input.RightMouseButtonHold),
+        typeof(Code.Gameplay.Input.TapHold),
         typeof(Code.Gameplay.Routes.FinishTowerRoutesPoint),
         typeof(Code.Gameplay.Routes.Route),
         typeof(Code.Gameplay.Routes.RouteDistance),
@@ -143,11 +146,13 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Routes.StartTowerRoutesPoint),
         typeof(Code.Gameplay.Soldiers.HorseKnight),
         typeof(Code.Gameplay.Soldiers.SoldierAttackTowerId),
+        typeof(Code.Gameplay.Soldiers.SoldierDeathViewComponent),
         typeof(Code.Gameplay.Soldiers.SoldierHealth),
         typeof(Code.Gameplay.Soldiers.SoldierTowerOfBirthId),
         typeof(Code.Gameplay.Towers.Catapult),
         typeof(Code.Gameplay.Towers.CatapultShootingCooldownComponent),
         typeof(Code.Gameplay.Towers.Hippodrome),
+        typeof(Code.Gameplay.Towers.LastArrivedKnightType),
         typeof(Code.Gameplay.Towers.MaxRouteCount),
         typeof(Code.Gameplay.Towers.Obstacle),
         typeof(Code.Gameplay.Towers.Projectile),
@@ -166,6 +171,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.UI.HudCanvas),
         typeof(Code.Gameplay.UI.HudHandlerComponent),
         typeof(Code.Infrastructure.Destroy.Destructed),
+        typeof(Code.Infrastructure.Destroy.SelfDestructTimer),
         typeof(Code.Infrastructure.View.InitialTransform),
         typeof(Code.Infrastructure.View.View),
         typeof(Code.Infrastructure.View.ViewPath),

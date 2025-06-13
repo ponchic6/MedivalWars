@@ -5,6 +5,7 @@ namespace Code.Gameplay.Towers.Systems
 {
     public class CatapultProjectileDestructSystem : IExecuteSystem
     {
+        private const float distanceForDestruct = 0.2f;
         private readonly GameContext _game;
         private readonly IGroup<GameEntity> _entities;
 
@@ -27,7 +28,7 @@ namespace Code.Gameplay.Towers.Systems
                     continue;
                 }
 
-                if (Vector3.Distance(target.transform.Value.position, projectile.transform.Value.position) > 0.2f)
+                if (Vector3.Distance(target.transform.Value.position, projectile.transform.Value.position) > distanceForDestruct)
                     continue;
                 
                 if (target.hasSoldierAttackTowerId)

@@ -16,7 +16,7 @@ namespace Code.Gameplay.Map.Systems
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
-            context.CreateCollector(GameMatcher.PlayClick.Added());
+            context.CreateCollector(GameMatcher.PlayClick.Added(), GameMatcher.MapRestartClick.Added());
 
         protected override bool Filter(GameEntity entity) =>
             true;
@@ -24,6 +24,7 @@ namespace Code.Gameplay.Map.Systems
         protected override void Execute(List<GameEntity> entities)
         {
             _game.inputEntity.isPlayClick = false;
+            _game.inputEntity.isMapRestartClick = false;
             
             _levelFactory.CleanMap();
             GameEntity hudCanvasEntity = _game.hudCanvasEntity;

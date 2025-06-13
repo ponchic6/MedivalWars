@@ -34,7 +34,7 @@ namespace Code.Gameplay.Towers.Systems
                 if (target.hasSoldierAttackTowerId)
                 {
                     projectile.isDestructed = true;
-                    target.isDestructed = true;
+                    target.ReplaceSoldierHealth(target.soldierHealth.Value - 2);
                     continue;
                 }
 
