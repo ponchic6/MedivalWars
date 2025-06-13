@@ -11,3 +11,4 @@ namespace Code.Gameplay.Levels
         public EntityBehaviour obstaclePrefab;
     }
 }
+

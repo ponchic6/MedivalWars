@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Level5
   m_EditorClassIdentifier: 
   levelObjects:
-  - position: {x: -0.117, y: 0, z: 0.567}
-    towerFraction: 1
+  - position: {x: 0.009, y: 0, z: -0.25}
+    towerFraction: 2
     towerType: 0
-    initialTowerScore: 65
-  - position: {x: 0.565, y: 0, z: -0.041}
+    initialTowerScore: 35
+  - position: {x: -0.515, y: 0, z: -0.129}
     towerFraction: 0
     towerType: 0
     initialTowerScore: 5
@@ -25,12 +25,12 @@ MonoBehaviour:
     towerFraction: 0
     towerType: 0
     initialTowerScore: 5
-  - position: {x: -0.587, y: 0, z: -0.068}
+  - position: {x: 0.523, y: 0, z: -0.127}
     towerFraction: 0
     towerType: 0
     initialTowerScore: 5
-  - position: {x: 0.009, y: 0, z: -0.25}
-    towerFraction: 2
+  - position: {x: -0.117, y: 0, z: 0.567}
+    towerFraction: 1
     towerType: 0
-    initialTowerScore: 35
+    initialTowerScore: 65
   obstaclePrefab: {fileID: 2129036011529713783, guid: 85fcb08acb1ef9a4393b4fef98b6d55f, type: 3}

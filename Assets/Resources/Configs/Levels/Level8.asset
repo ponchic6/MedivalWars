@@ -13,24 +13,24 @@ MonoBehaviour:
   m_Name: Level8
   m_EditorClassIdentifier: 
   levelObjects:
-  - position: {x: 0.652, y: 0, z: -0.173}
-    towerFraction: 1
-    towerType: 0
-    initialTowerScore: 2
-  - position: {x: 0.24, y: 0, z: -0.101}
-    towerFraction: 1
-    towerType: 0
-    initialTowerScore: 2
-  - position: {x: -0.209, y: 0, z: -0.1}
-    towerFraction: 1
-    towerType: 0
-    initialTowerScore: 2
-  - position: {x: -0.645, y: 0, z: -0.165}
-    towerFraction: 1
-    towerType: 0
-    initialTowerScore: 2
   - position: {x: -0.036, y: 0, z: -0.824}
     towerFraction: 0
     towerType: 0
     initialTowerScore: 60
+  - position: {x: -0.516, y: 0, z: -0.212}
+    towerFraction: 1
+    towerType: 0
+    initialTowerScore: 2
+  - position: {x: -0.166, y: 0, z: -0.086}
+    towerFraction: 1
+    towerType: 0
+    initialTowerScore: 2
+  - position: {x: 0.201, y: 0, z: -0.091}
+    towerFraction: 1
+    towerType: 0
+    initialTowerScore: 2
+  - position: {x: 0.52, y: 0, z: -0.199}
+    towerFraction: 1
+    towerType: 0
+    initialTowerScore: 2
   obstaclePrefab: {fileID: 0}

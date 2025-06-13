@@ -13,27 +13,27 @@ MonoBehaviour:
   m_Name: Level12
   m_EditorClassIdentifier: 
   levelObjects:
-  - position: {x: 0.69, y: 0, z: -0.581}
+  - position: {x: 0.4627282, y: 0, z: -0.57785213}
     towerFraction: 0
     towerType: 0
     initialTowerScore: 5
-  - position: {x: 0.667, y: 0, z: 0.396}
+  - position: {x: 0.507, y: 0, z: 0.381}
     towerFraction: 0
     towerType: 0
     initialTowerScore: 5
-  - position: {x: 0.051, y: 0, z: 0.395}
+  - position: {x: -0.037000015, y: 0, z: 0.395}
     towerFraction: 2
     towerType: 0
     initialTowerScore: 5
-  - position: {x: -0.599, y: 0, z: 0.363}
+  - position: {x: -0.5598799, y: 0, z: 0.36154473}
     towerFraction: 1
     towerType: 0
     initialTowerScore: 5
-  - position: {x: -0.574, y: 0, z: -0.61}
+  - position: {x: -0.46612003, y: 0, z: -0.60854506}
     towerFraction: 1
     towerType: 0
     initialTowerScore: 5
-  - position: {x: 0.051, y: 0, z: -0.585}
+  - position: {x: -0.037000015, y: 0, z: -0.585}
     towerFraction: 2
     towerType: 2
     initialTowerScore: 5

@@ -17,11 +17,11 @@ MonoBehaviour:
     towerFraction: 1
     towerType: 0
     initialTowerScore: 10
-  - position: {x: -0.611, y: 0, z: 0.607}
+  - position: {x: -0.484, y: 0, z: 0.598}
     towerFraction: 2
     towerType: 0
     initialTowerScore: 9
-  - position: {x: -0.654, y: 0, z: -0.041}
+  - position: {x: -0.537, y: 0, z: -0.071}
     towerFraction: 2
     towerType: 0
     initialTowerScore: 15
@@ -29,11 +29,11 @@ MonoBehaviour:
     towerFraction: 2
     towerType: 0
     initialTowerScore: 10
-  - position: {x: 0.624, y: 0, z: -0.014}
+  - position: {x: 0.5, y: 0, z: -0.069}
     towerFraction: 2
     towerType: 1
     initialTowerScore: 5
-  - position: {x: 0.627, y: 0, z: -0.587}
+  - position: {x: 0.438, y: 0, z: -0.611}
     towerFraction: 2
     towerType: 2
     initialTowerScore: 10
@@ -45,7 +45,7 @@ MonoBehaviour:
     towerFraction: 2
     towerType: 0
     initialTowerScore: 5
-  - position: {x: -0.558, y: 0, z: -0.85}
+  - position: {x: -0.431, y: 0, z: -0.846}
     towerFraction: 0
     towerType: 0
     initialTowerScore: 25

@@ -5,14 +5,13 @@ using System.IO;
 
 namespace Code.Gameplay.Levels
 {
-    /*
     public class LevelConfigGenerator : EditorWindow 
     {
         private string levelName = "NewLevel";
         private string savePath = "Assets/Resources/Configs/Levels/";
         private List<LevelObjectMarker> foundMarkers = new List<LevelObjectMarker>();
 
-        [MenuItem("Tools/Level Config Generator")]
+        [MenuItem("Tools/Level System/Level Config Generator")]
         public static void ShowWindow()
         {
             GetWindow<LevelConfigGenerator>("Level Config Generator");
@@ -127,5 +126,4 @@ namespace Code.Gameplay.Levels
             }
         }
     }
-*/
 }

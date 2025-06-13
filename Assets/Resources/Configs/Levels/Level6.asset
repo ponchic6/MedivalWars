@@ -13,28 +13,28 @@ MonoBehaviour:
   m_Name: Level6
   m_EditorClassIdentifier: 
   levelObjects:
-  - position: {x: 0.029, y: 0, z: 0.499}
-    towerFraction: 1
+  - position: {x: 0.448, y: 0, z: -0.771}
+    towerFraction: 0
     towerType: 0
-    initialTowerScore: 10
-  - position: {x: -0.632, y: 0, z: -0.085}
-    towerFraction: 2
-    towerType: 1
-    initialTowerScore: 5
-  - position: {x: 0.037, y: 0, z: -0.276}
-    towerFraction: 2
-    towerType: 0
-    initialTowerScore: 5
-  - position: {x: -0.466, y: 0, z: -0.735}
-    towerFraction: 2
-    towerType: 0
-    initialTowerScore: 1
+    initialTowerScore: 25
   - position: {x: -0.005, y: 0, z: -0.98}
     towerFraction: 2
     towerType: 0
     initialTowerScore: 1
-  - position: {x: 0.509, y: 0, z: -0.771}
-    towerFraction: 0
+  - position: {x: -0.441, y: 0, z: -0.735}
+    towerFraction: 2
     towerType: 0
-    initialTowerScore: 25
+    initialTowerScore: 1
+  - position: {x: 0.037, y: 0, z: -0.276}
+    towerFraction: 2
+    towerType: 0
+    initialTowerScore: 5
+  - position: {x: -0.517, y: 0, z: -0.085}
+    towerFraction: 2
+    towerType: 1
+    initialTowerScore: 5
+  - position: {x: 0.029, y: 0, z: 0.499}
+    towerFraction: 1
+    towerType: 0
+    initialTowerScore: 10
   obstaclePrefab: {fileID: -6268960439662023317, guid: 2ebb48eed38cf574fae026acb1f3af80, type: 3}

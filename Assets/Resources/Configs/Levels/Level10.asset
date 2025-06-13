@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: Level10
   m_EditorClassIdentifier: 
   levelObjects:
-  - position: {x: -0.562, y: 0, z: -0.894}
-    towerFraction: 1
-    towerType: 0
-    initialTowerScore: 5
-  - position: {x: 0.468, y: 0, z: -0.946}
-    towerFraction: 2
-    towerType: 0
-    initialTowerScore: 15
-  - position: {x: 0.528, y: 0, z: 0.318}
-    towerFraction: 0
-    towerType: 0
-    initialTowerScore: 15
   - position: {x: -0.082, y: 0, z: -0.307}
     towerFraction: 2
     towerType: 2
+    initialTowerScore: 5
+  - position: {x: 0.423, y: 0, z: 0.326}
+    towerFraction: 0
+    towerType: 0
+    initialTowerScore: 15
+  - position: {x: 0.386, y: 0, z: -0.933}
+    towerFraction: 2
+    towerType: 0
+    initialTowerScore: 15
+  - position: {x: -0.44, y: 0, z: -0.941}
+    towerFraction: 1
+    towerType: 0
     initialTowerScore: 5
   obstaclePrefab: {fileID: 0}

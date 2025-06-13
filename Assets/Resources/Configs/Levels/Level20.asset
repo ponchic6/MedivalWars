@@ -13,31 +13,19 @@ MonoBehaviour:
   m_Name: Level20
   m_EditorClassIdentifier: 
   levelObjects:
-  - position: {x: -0.47, y: 0, z: -1.025}
-    towerFraction: 2
-    towerType: 1
-    initialTowerScore: 5
-  - position: {x: 0.655, y: 0, z: 0.513}
-    towerFraction: 2
-    towerType: 1
-    initialTowerScore: 5
-  - position: {x: 0.568, y: 0, z: -0.972}
+  - position: {x: 0.038, y: 0, z: 0.653}
+    towerFraction: 0
+    towerType: 0
+    initialTowerScore: 10
+  - position: {x: -0.528, y: 0, z: 0.461}
     towerFraction: 2
     towerType: 0
     initialTowerScore: 9
-  - position: {x: 0.059, y: 0, z: -0.967}
-    towerFraction: 1
-    towerType: 0
-    initialTowerScore: 9
-  - position: {x: 0.587, y: 0, z: -0.537}
+  - position: {x: -0.526, y: 0, z: -0.086}
     towerFraction: 2
     towerType: 0
     initialTowerScore: 9
-  - position: {x: 0.039, y: 0, z: -0.507}
-    towerFraction: 2
-    towerType: 0
-    initialTowerScore: 9
-  - position: {x: 0.598, y: 0, z: -0.089}
+  - position: {x: -0.488, y: 0, z: -0.564}
     towerFraction: 2
     towerType: 0
     initialTowerScore: 9
@@ -45,20 +33,32 @@ MonoBehaviour:
     towerFraction: 2
     towerType: 0
     initialTowerScore: 9
-  - position: {x: -0.573, y: 0, z: -0.578}
+  - position: {x: 0.496, y: 0, z: -0.039}
     towerFraction: 2
     towerType: 0
     initialTowerScore: 9
-  - position: {x: -0.623, y: 0, z: -0.109}
+  - position: {x: 0.039, y: 0, z: -0.507}
     towerFraction: 2
     towerType: 0
     initialTowerScore: 9
-  - position: {x: -0.668, y: 0, z: 0.402}
+  - position: {x: 0.509, y: 0, z: -0.537}
     towerFraction: 2
     towerType: 0
     initialTowerScore: 9
-  - position: {x: 0.038, y: 0, z: 0.653}
-    towerFraction: 0
+  - position: {x: 0.059, y: 0, z: -0.967}
+    towerFraction: 1
     towerType: 0
-    initialTowerScore: 10
+    initialTowerScore: 9
+  - position: {x: 0.478, y: 0, z: -0.972}
+    towerFraction: 2
+    towerType: 0
+    initialTowerScore: 9
+  - position: {x: 0.529, y: 0, z: 0.505}
+    towerFraction: 2
+    towerType: 1
+    initialTowerScore: 5
+  - position: {x: -0.401, y: 0, z: -1.025}
+    towerFraction: 2
+    towerType: 1
+    initialTowerScore: 5
   obstaclePrefab: {fileID: 8510465319335803938, guid: a1a55617f704ac1418b6a356fbb9c2f1, type: 3}

@@ -57,13 +57,14 @@ namespace Code.Gameplay.Routes.Systems
                 }
             }
         }
-
+        
         private bool Intersected(out RaycastHit[] hits)
         {
             Ray ray = _cameraProvider.GetMainCamera().ScreenPointToRay(_screenTapService.GetScreenTap);
-
-            hits = Physics.RaycastAll(ray);
-       
+            
+            float sphereRadius = 0.05f;
+            hits = Physics.SphereCastAll(ray, sphereRadius);
+   
             return hits.Length != 0;
         }
     }

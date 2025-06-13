@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   levelObjects:
-  - position: {x: 0.575, y: 0, z: -0.26}
+  - position: {x: 0.431, y: 0, z: -0.26}
     towerFraction: 2
     towerType: 0
     initialTowerScore: 5
@@ -21,7 +21,7 @@ MonoBehaviour:
     towerFraction: 2
     towerType: 1
     initialTowerScore: 3
-  - position: {x: -0.66, y: 0, z: -0.254}
+  - position: {x: -0.495, y: 0, z: -0.254}
     towerFraction: 2
     towerType: 0
     initialTowerScore: 5
