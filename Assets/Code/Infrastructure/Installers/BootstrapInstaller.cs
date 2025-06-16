@@ -19,6 +19,7 @@ namespace Code.Infrastructure.Installers
         
         public override void InstallBindings()
         {
+            Application.targetFrameRate = -1;
             Container.Bind<IContext<GameEntity>>().FromInstance(Contexts.sharedInstance.game).AsSingle();
             Container.Bind<CommonStaticData>().FromInstance(_commonStaticData).AsSingle();
             Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();

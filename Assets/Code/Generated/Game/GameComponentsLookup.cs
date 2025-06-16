@@ -8,64 +8,74 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Id = 0;
-    public const int LineRenderer = 1;
-    public const int Transform = 2;
-    public const int EnemyActionCooldown = 3;
-    public const int EnemyReadyToAction = 4;
-    public const int ChoseLevel = 5;
-    public const int Input = 6;
-    public const int MapRestartClick = 7;
-    public const int NextLevelClick = 8;
-    public const int PlayClick = 9;
-    public const int PreviousLevelClick = 10;
-    public const int TapHold = 11;
-    public const int FinishTowerRoutesPoint = 12;
-    public const int Route = 13;
-    public const int RouteDistance = 14;
-    public const int RouteFinishId = 15;
-    public const int RouteIntersectingObstacle = 16;
-    public const int RouteReady = 17;
-    public const int RoutesColorController = 18;
-    public const int RouteStartId = 19;
-    public const int StartTowerRoutesPoint = 20;
-    public const int HorseKnight = 21;
-    public const int SoldierAttackTowerId = 22;
-    public const int SoldierDeathView = 23;
-    public const int SoldierHealth = 24;
-    public const int SoldierTowerOfBirthId = 25;
-    public const int Catapult = 26;
-    public const int CatapultShootingCooldown = 27;
-    public const int Hippodrome = 28;
-    public const int LastArrivedKnightType = 29;
-    public const int MaxRouteCount = 30;
-    public const int Obstacle = 31;
-    public const int Projectile = 32;
-    public const int ProjectileTargetId = 33;
-    public const int SoldierCreationCooldown = 34;
-    public const int Tower = 35;
-    public const int TowerFraction = 36;
-    public const int TowerFractionColorController = 37;
-    public const int TowerLevel = 38;
-    public const int TowerLevelViewController = 39;
-    public const int TowerRouteIdList = 40;
-    public const int TowerScore = 41;
-    public const int TowerScoreIncreasingCooldown = 42;
-    public const int TowerUiView = 43;
-    public const int UsedRouteCount = 44;
-    public const int HudCanvas = 45;
-    public const int HudHandler = 46;
-    public const int Destructed = 47;
-    public const int SelfDestructTimer = 48;
-    public const int InitialTransform = 49;
-    public const int View = 50;
-    public const int ViewPath = 51;
-    public const int ViewPrefab = 52;
-    public const int ViewPrefabWithParent = 53;
+    public const int AudioOn = 0;
+    public const int AudioSource = 1;
+    public const int MainAudio = 2;
+    public const int SoldierDeathAudioCooldown = 3;
+    public const int Id = 4;
+    public const int LineRenderer = 5;
+    public const int Transform = 6;
+    public const int EnemyActionCooldown = 7;
+    public const int EnemyReadyToAction = 8;
+    public const int ChoseLevel = 9;
+    public const int Input = 10;
+    public const int MapRestartClick = 11;
+    public const int NextLevelClick = 12;
+    public const int PlayClick = 13;
+    public const int PreviousLevelClick = 14;
+    public const int TapHold = 15;
+    public const int FinishTowerRoutesPoint = 16;
+    public const int Route = 17;
+    public const int RouteDistance = 18;
+    public const int RouteFinishId = 19;
+    public const int RouteIntersectingObstacle = 20;
+    public const int RouteReady = 21;
+    public const int RoutesColorController = 22;
+    public const int RouteStartId = 23;
+    public const int StartTowerRoutesPoint = 24;
+    public const int HorseKnight = 25;
+    public const int SoldierAttackTowerId = 26;
+    public const int SoldierDeathView = 27;
+    public const int SoldierHealth = 28;
+    public const int SoldierTowerOfBirthId = 29;
+    public const int Catapult = 30;
+    public const int CatapultShootingCooldown = 31;
+    public const int Decor = 32;
+    public const int Hippodrome = 33;
+    public const int LastArrivedKnightType = 34;
+    public const int MaxRouteCount = 35;
+    public const int Obstacle = 36;
+    public const int Projectile = 37;
+    public const int ProjectileTargetId = 38;
+    public const int SoldierCreationCooldown = 39;
+    public const int Tower = 40;
+    public const int TowerFraction = 41;
+    public const int TowerFractionColorController = 42;
+    public const int TowerLevel = 43;
+    public const int TowerLevelViewController = 44;
+    public const int TowerRouteIdList = 45;
+    public const int TowerScore = 46;
+    public const int TowerScoreIncreasingCooldown = 47;
+    public const int TowerUiView = 48;
+    public const int UsedRouteCount = 49;
+    public const int CursorFtue = 50;
+    public const int HudCanvas = 51;
+    public const int HudHandler = 52;
+    public const int Destructed = 53;
+    public const int SelfDestructTimer = 54;
+    public const int InitialTransform = 55;
+    public const int View = 56;
+    public const int ViewPath = 57;
+    public const int ViewPrefab = 58;
+    public const int ViewPrefabWithParent = 59;
 
-    public const int TotalComponents = 54;
+    public const int TotalComponents = 60;
 
     public static readonly string[] componentNames = {
+        "AudioOn",
+        "AudioSource",
+        "MainAudio",
+        "SoldierDeathAudioCooldown",
         "Id",
         "LineRenderer",
         "Transform",
@@ -94,6 +104,7 @@ public static class GameComponentsLookup {
         "SoldierTowerOfBirthId",
         "Catapult",
         "CatapultShootingCooldown",
+        "Decor",
         "Hippodrome",
         "LastArrivedKnightType",
         "MaxRouteCount",
@@ -111,6 +122,7 @@ public static class GameComponentsLookup {
         "TowerScoreIncreasingCooldown",
         "TowerUiView",
         "UsedRouteCount",
+        "CursorFtue",
         "HudCanvas",
         "HudHandler",
         "Destructed",
@@ -123,6 +135,10 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.Gameplay.Audio.AudioOn),
+        typeof(Code.Gameplay.Audio.AudioSourceComponent),
+        typeof(Code.Gameplay.Audio.MainAudio),
+        typeof(Code.Gameplay.Audio.SoldierDeathAudioCooldown),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.LineRendererComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
@@ -151,6 +167,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Soldiers.SoldierTowerOfBirthId),
         typeof(Code.Gameplay.Towers.Catapult),
         typeof(Code.Gameplay.Towers.CatapultShootingCooldownComponent),
+        typeof(Code.Gameplay.Towers.Decor),
         typeof(Code.Gameplay.Towers.Hippodrome),
         typeof(Code.Gameplay.Towers.LastArrivedKnightType),
         typeof(Code.Gameplay.Towers.MaxRouteCount),
@@ -168,6 +185,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Towers.TowerScoreIncreasingCooldown),
         typeof(Code.Gameplay.Towers.TowerUiViewComponent),
         typeof(Code.Gameplay.Towers.UsedRouteCount),
+        typeof(Code.Gameplay.UI.CursorFtueComponent),
         typeof(Code.Gameplay.UI.HudCanvas),
         typeof(Code.Gameplay.UI.HudHandlerComponent),
         typeof(Code.Infrastructure.Destroy.Destructed),

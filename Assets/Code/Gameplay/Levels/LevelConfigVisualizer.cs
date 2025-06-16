@@ -1,10 +1,10 @@
-﻿using Code.Gameplay.Levels;
-using Code.Gameplay.Towers;
-using UnityEngine;
+﻿using Code.Gameplay.Towers;
 using UnityEditor;
+using UnityEngine;
 
-namespace Code.Editor.LevelTools
+namespace Code.Gameplay.Levels
 {
+#if UNITY_EDITOR
     public class LevelConfigVisualizer : EditorWindow
     {
         private LevelConfig selectedLevelConfig;
@@ -156,7 +156,7 @@ namespace Code.Editor.LevelTools
             }
             
             // Also find and remove any orphaned visualization roots
-            GameObject[] roots = GameObject.FindObjectsOfType<GameObject>();
+            GameObject[] roots = FindObjectsOfType<GameObject>();
             foreach (var root in roots)
             {
                 if (root.name == VISUALIZATION_ROOT_NAME)
@@ -185,10 +185,10 @@ namespace Code.Editor.LevelTools
             
             // Confirm action
             if (!EditorUtility.DisplayDialog(
-                "Update Level Config", 
-                $"This will replace all {selectedLevelConfig.levelObjects.Count} objects in the config with {markers.Length} markers from the scene. Continue?", 
-                "Yes", 
-                "Cancel"))
+                    "Update Level Config", 
+                    $"This will replace all {selectedLevelConfig.levelObjects.Count} objects in the config with {markers.Length} markers from the scene. Continue?", 
+                    "Yes", 
+                    "Cancel"))
             {
                 return;
             }
@@ -282,4 +282,5 @@ namespace Code.Editor.LevelTools
             return height;
         }
     }
+#endif
 }

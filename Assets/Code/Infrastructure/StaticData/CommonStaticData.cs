@@ -39,5 +39,9 @@ namespace Code.Infrastructure.StaticData
         public float towerScoreIncreasingCooldownFirstLevel;
         public float towerScoreIncreasingCooldownSecondLevel;
         public EntityBehaviour canvasPrefab;
+        public EntityBehaviour mainAudioPrefab;
+        public AudioClip blueSoldierDestructSound;
+        public AudioClip redSoldierDestructSound;
+        public float soldierDestructAudioCooldown;
     }
 }

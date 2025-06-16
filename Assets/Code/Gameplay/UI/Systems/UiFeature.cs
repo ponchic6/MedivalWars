@@ -1,5 +1,4 @@
-﻿using Code.Gameplay.Map.Systems;
-using Code.Infrastructure.Systems;
+﻿using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.UI.Systems
 {
@@ -8,7 +7,7 @@ namespace Code.Gameplay.UI.Systems
         public UiFeature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<CanvasInitializeSystem>());
-
+            
             Add(systemFactory.Create<VictoryCheckReactiveSystem>());
             Add(systemFactory.Create<StartLevelReactiveSystem>());
             Add(systemFactory.Create<LevelChangeUiReactiveSystem>());

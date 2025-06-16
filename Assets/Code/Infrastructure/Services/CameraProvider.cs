@@ -6,7 +6,12 @@ namespace Code.Infrastructure.Services
     {
         private Camera _mainCamera;
 
-        public Camera GetMainCamera() =>
-            _mainCamera ??= Camera.main;
+        public Camera GetMainCamera()
+        {
+            if (_mainCamera == null)
+                _mainCamera = Camera.main;
+
+            return _mainCamera;
+        }
     }
 }

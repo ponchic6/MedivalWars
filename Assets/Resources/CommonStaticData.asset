@@ -63,3 +63,7 @@ MonoBehaviour:
   towerScoreIncreasingCooldownFirstLevel: 3
   towerScoreIncreasingCooldownSecondLevel: 2.5
   canvasPrefab: {fileID: 6592886247740035181, guid: 5aa5023b88546ef49979ce7fa066e067, type: 3}
+  mainAudioPrefab: {fileID: 7754931142165485283, guid: 92f222551df25304484925d7671dc6f5, type: 3}
+  blueSoldierDestructSound: {fileID: 8300000, guid: 97310afad3ff7fb469094341c4332680, type: 3}
+  redSoldierDestructSound: {fileID: 8300000, guid: a4a785810f02fda4db41a92e6d6a1aa0, type: 3}
+  soldierDestructAudioCooldown: 0.3

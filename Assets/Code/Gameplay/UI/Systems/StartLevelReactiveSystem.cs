@@ -2,7 +2,7 @@
 using Code.Gameplay.Map.Services;
 using Entitas;
 
-namespace Code.Gameplay.Map.Systems
+namespace Code.Gameplay.UI.Systems
 {
     public class StartLevelReactiveSystem : ReactiveSystem<GameEntity>
     {

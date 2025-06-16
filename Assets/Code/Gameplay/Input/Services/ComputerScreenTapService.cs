@@ -6,5 +6,8 @@ namespace Code.Gameplay.Input.Services
     {
         public Vector3 GetScreenTap =>
             UnityEngine.Input.mousePosition;
+
+        public bool IsTapping =>
+            UnityEngine.Input.GetMouseButton(0);
     }
 }

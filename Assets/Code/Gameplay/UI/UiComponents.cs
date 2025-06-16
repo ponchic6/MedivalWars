@@ -6,4 +6,5 @@ namespace Code.Gameplay.UI
 {
     [Game, Unique] public class HudCanvas : IComponent { }
     [Game] public class HudHandlerComponent : IComponent { public HudHandler Value; }
+    [Game] public class CursorFtueComponent : IComponent { public CursorFtue Value; }
 }

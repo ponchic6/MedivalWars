@@ -16,6 +16,7 @@ namespace Code.Gameplay.UI.View
         [SerializeField] private Button _restartLevelButton;
         [SerializeField] private Button _defeatHudRestartLevelButton;
         [SerializeField] private Button _victoryHudNextLevelButton;
+        [SerializeField] private Toggle _volumeToggle;
         [SerializeField] private GameObject _victoryHud;
         [SerializeField] private GameObject _defeatHud;
         [SerializeField] private TMP_Text _levelText;
@@ -37,6 +38,7 @@ namespace Code.Gameplay.UI.View
             _restartLevelButton.onClick.AsObservable().Subscribe(_ => _game.inputEntity.isMapRestartClick = true).AddTo(this);
             _defeatHudRestartLevelButton.onClick.AsObservable().Subscribe(_ => _game.inputEntity.isMapRestartClick = true).AddTo(this);
             _victoryHudNextLevelButton.onClick.AsObservable().Subscribe(_ => _game.inputEntity.isNextLevelClick = true).AddTo(this);
+            _volumeToggle.onValueChanged.AsObservable().Subscribe(x => _game.mainAudioEntity.isAudioOn = !x).AddTo(this);
         }
 
         public void SetPlayState()
@@ -47,6 +49,7 @@ namespace Code.Gameplay.UI.View
             _restartLevelButton.gameObject.SetActive(true);
             _victoryHud.gameObject.SetActive(false);
             _defeatHud.gameObject.SetActive(false);
+            _levelText.transform.parent.gameObject.SetActive(false);
         }
         
         public void SetLevelChoosingState()

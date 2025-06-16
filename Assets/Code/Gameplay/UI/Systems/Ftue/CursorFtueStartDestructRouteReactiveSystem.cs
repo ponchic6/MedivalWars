@@ -1,0 +1,39 @@
+﻿using System.Collections.Generic;
+using Code.Gameplay.Levels;
+using Code.Infrastructure.StaticData;
+using Entitas;
+
+namespace Code.Gameplay.UI.Systems.Ftue
+{
+    public class CursorFtueStartDestructRouteReactiveSystem : ReactiveSystem<GameEntity>
+    {
+        private readonly GameContext _game;
+        private readonly CommonStaticData _commonStaticData;
+
+        public CursorFtueStartDestructRouteReactiveSystem(IContext<GameEntity> context, CommonStaticData commonStaticData) : base(context)
+        {
+            _commonStaticData = commonStaticData;
+            _game = Contexts.sharedInstance.game;
+        }
+
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
+            context.CreateCollector(GameMatcher.RouteFinishId.Added());
+
+        protected override bool Filter(GameEntity entity) =>
+            _game.inputEntity.choseLevel.Value == 0;
+
+        protected override void Execute(List<GameEntity> entities)
+        {
+            IGroup<GameEntity> routes = _game.GetGroup(GameMatcher.Route);
+
+            if (routes.count == 1)
+            {
+                List<LevelObjectData> levelObjectData = _commonStaticData.levels[0].levelObjects;
+                LevelObjectData blueTower = levelObjectData[3];
+                LevelObjectData neutralTower = levelObjectData[2];
+                _game.hudCanvasEntity.cursorFtue.Value.StopRouteCreationDrag();
+                _game.hudCanvasEntity.cursorFtue.Value.StartRouteDestructDrag(blueTower.position, neutralTower.position);
+            }
+        }
+    }
+}

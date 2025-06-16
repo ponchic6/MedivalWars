@@ -95,6 +95,7 @@ namespace Code.Gameplay.Map.Services
             towerEntity.AddTowerScore(initialTowerScore);
             towerEntity.AddTowerFraction(fraction);
             towerEntity.isTower = true;
+            towerEntity.isDecor = true;
             
             switch (towerType)
             {
@@ -126,14 +127,12 @@ namespace Code.Gameplay.Map.Services
                     towerEntity.AddUsedRouteCount(0);
                     towerEntity.AddSoldierCreationCooldown(_commonStaticData.soldierCreationCooldownZeroLevel);
                     towerEntity.AddTowerRouteIdList(new List<int>());
-                    towerEntity.AddTowerScoreIncreasingCooldown(0);
                     break;
                 case TowerTypesEnum.Hippodrome:
                     towerEntity.AddViewPrefab(_commonStaticData.hippodromePrefab);
                     towerEntity.AddUsedRouteCount(0);
                     towerEntity.AddSoldierCreationCooldown(_commonStaticData.soldierCreationCooldownZeroLevel);
                     towerEntity.AddTowerRouteIdList(new List<int>());
-                    towerEntity.AddTowerScoreIncreasingCooldown(0);
                     towerEntity.isHippodrome = true;
                     break;
                 case TowerTypesEnum.Catapult:

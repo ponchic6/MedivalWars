@@ -16,6 +16,7 @@ namespace Code.Gameplay.Towers
     [Game] public class Hippodrome : IComponent { }
     [Game] public class Obstacle : IComponent { }
     [Game] public class Projectile : IComponent { }
+    [Game] public class Decor : IComponent { }
     [Game] public class LastArrivedKnightType : IComponent { public SoldierType Value; }
     [Game] public class ProjectileTargetId : IComponent { public int Value; }
     [Game] public class CatapultShootingCooldownComponent : IComponent { public float Value; }

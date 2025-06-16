@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 using System.IO;
 
 namespace Code.Gameplay.Levels
 {
+#if UNITY_EDITOR
     public class LevelConfigGenerator : EditorWindow 
     {
         private string levelName = "NewLevel";
@@ -74,7 +76,7 @@ namespace Code.Gameplay.Levels
             fullPath = AssetDatabase.GenerateUniqueAssetPath(fullPath);
             
             // Создаем ScriptableObject
-            LevelConfig config = ScriptableObject.CreateInstance<LevelConfig>();
+            LevelConfig config = CreateInstance<LevelConfig>();
             
             // Заполняем данными
             foreach (var marker in foundMarkers)
@@ -113,7 +115,7 @@ namespace Code.Gameplay.Levels
                     EditorUtility.DisplayDialog("Error", "Failed to create config file!", "OK");
                 }
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 EditorUtility.DisplayDialog("Error", $"Failed to create config: {e.Message}", "OK");
                 Debug.LogError($"Error creating config: {e}");
@@ -126,4 +128,5 @@ namespace Code.Gameplay.Levels
             }
         }
     }
+#endif
 }

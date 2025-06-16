@@ -7,14 +7,14 @@ namespace Code.Gameplay.Towers.Systems
     {
         public TowerFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create <TowerLevelInitializeReactiveSystem>());
-            
             Add(systemFactory.Create<TowerScorePassiveIncreasingSystem>());
             Add(systemFactory.Create<SoldierCreationSystem>());
             Add(systemFactory.Create<CatapultProjectileCreationSystem>());
             Add(systemFactory.Create<CatapultProjectileMoveSystem>());
             Add(systemFactory.Create<CatapultProjectileDestructSystem>());
-
+            
+            Add(systemFactory.Create<TowerLevelInitializeReactiveSystem>());
+            Add(systemFactory.Create<TowerPassiveScoreInitializeReactiveSystem>());
             Add(systemFactory.Create<SoldierCreationOnMaxScoreReactiveSystem>());
             Add(systemFactory.Create<TowerScoreChangeViewReactiveSystem>());
             Add(systemFactory.Create<TowerLevelChangeReactiveSystem>());
