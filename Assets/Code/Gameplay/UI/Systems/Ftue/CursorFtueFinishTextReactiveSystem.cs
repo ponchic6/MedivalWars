@@ -13,16 +13,15 @@ namespace Code.Gameplay.UI.Systems.Ftue
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
-            context.CreateCollector(GameMatcher.Route.Removed());
+            context.CreateCollector(GameMatcher.RouteFinishId.Removed());
 
-        protected override bool Filter(GameEntity entity)
+        protected override bool Filter(GameEntity entity) =>
+            _game.inputEntity.choseLevel.Value == 0;
+
+        protected override void Execute(List<GameEntity> entities)
         {
-            IGroup<GameEntity> routes = _game.GetGroup(GameMatcher.Route);
-            int routesCount = routes.count;
-            return routesCount == 0 && _game.inputEntity.choseLevel.Value == 0;
-        }
-
-        protected override void Execute(List<GameEntity> entities) =>
             _game.hudCanvasEntity.cursorFtue.Value.StopRouteDestructDrag();
+            _game.hudCanvasEntity.cursorFtue.Value.ShowFinalText();
+        }
     }
 }

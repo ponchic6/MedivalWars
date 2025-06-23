@@ -8,9 +8,11 @@ namespace Code.Gameplay.Audio.Systems
         {
             Add(systemFactory.Create<AudioInitializeSystem>());
             
-            Add(systemFactory.Create<SoldierDeathCooldownSystem>());
+            Add(systemFactory.Create<SoldierDeathAudioCooldownSystem>());
             
+            Add(systemFactory.Create<MainThemeInitializeReactiveSystem>());
             Add(systemFactory.Create<SoldierDestructAudioReactiveSystem>());
+            Add(systemFactory.Create<AudioVolumeReactiveSystem>());
         }
     }
 }

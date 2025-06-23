@@ -22,6 +22,7 @@ namespace Code.Gameplay.UI.View
         [SerializeField] private TMP_Text _levelText;
         private GameContext _game;
         private ISaveService _saveService;
+        private bool _resultProcessing;
 
         [Inject]
         public void Construct(ISaveService saveService)
@@ -38,7 +39,8 @@ namespace Code.Gameplay.UI.View
             _restartLevelButton.onClick.AsObservable().Subscribe(_ => _game.inputEntity.isMapRestartClick = true).AddTo(this);
             _defeatHudRestartLevelButton.onClick.AsObservable().Subscribe(_ => _game.inputEntity.isMapRestartClick = true).AddTo(this);
             _victoryHudNextLevelButton.onClick.AsObservable().Subscribe(_ => _game.inputEntity.isNextLevelClick = true).AddTo(this);
-            _volumeToggle.onValueChanged.AsObservable().Subscribe(x => _game.mainAudioEntity.isAudioOn = !x).AddTo(this);
+            _volumeToggle.onValueChanged.AsObservable().Subscribe(x => _game.mainAudioEntity.isAudioOff = x).AddTo(this);
+            _game.mainAudioEntity.isAudioOff = _volumeToggle.isOn;
         }
 
         public void SetPlayState()
@@ -66,22 +68,34 @@ namespace Code.Gameplay.UI.View
 
         public async void SetVictoryState()
         {
+            if (_resultProcessing)
+                return;
+            _resultProcessing = true;
+            
             await UniTask.Delay(1000);
             _playButton.gameObject.SetActive(false);
             _nextLevelButton.gameObject.SetActive(false);
             _previousLevelButton.gameObject.SetActive(false);
             _victoryHud.gameObject.SetActive(true);
             _defeatHud.gameObject.SetActive(false);
+            
+            _resultProcessing = false;
         }
 
         public async void ShowDefeatHud()
         {
+            if (_resultProcessing)
+                return;
+            _resultProcessing = true;
+            
             await UniTask.Delay(1000);
             _playButton.gameObject.SetActive(false);
             _nextLevelButton.gameObject.SetActive(false);
             _previousLevelButton.gameObject.SetActive(false);
             _victoryHud.gameObject.SetActive(false);
             _defeatHud.gameObject.SetActive(true);
+
+            _resultProcessing = false;
         }
     }
 }

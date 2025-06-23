@@ -3,7 +3,6 @@ using Code.Gameplay.Audio.View;
 using Code.Gameplay.Towers;
 using Code.Infrastructure.StaticData;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Audio.Systems
 {

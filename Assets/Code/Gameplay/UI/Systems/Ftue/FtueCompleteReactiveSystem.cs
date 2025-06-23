@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Towers;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.UI.Systems.Ftue
 {
@@ -28,7 +29,7 @@ namespace Code.Gameplay.UI.Systems.Ftue
                 if (entity.towerFraction.Value != TowerFractionsEnum.Blue)
                     return;
             }
-
+            
             _game.hudCanvasEntity.cursorFtue.Value.CompleteFtue();
         }
     }

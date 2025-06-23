@@ -63,8 +63,15 @@ namespace Code.Gameplay.UI.View
             _isAnimating = false;
             _cursorRectTransform.gameObject.SetActive(false);
             _ftueRouteDestructionText.gameObject.SetActive(false);
-            _ftueFinalText.gameObject.SetActive(true);
             _secondStepFtueCompleted = true;
+        }
+
+        public void ShowFinalText()
+        {
+            if (_thirdStepFtueCompleted)
+                return;
+            
+            _ftueFinalText.gameObject.SetActive(true);
         }
 
         public void CompleteFtue()

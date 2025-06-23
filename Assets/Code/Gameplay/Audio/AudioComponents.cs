@@ -6,6 +6,6 @@ namespace Code.Gameplay.Audio
 {
     [Game, Unique] public class MainAudio : IComponent { }
     [Game] public class AudioSourceComponent : IComponent { public AudioSourceController Value; }
-    [Game] public class AudioOn : IComponent { }
+    [Game] public class AudioOff : IComponent { }
     [Game] public class SoldierDeathAudioCooldown : IComponent { public float Value; }
 }

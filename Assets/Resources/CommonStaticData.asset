@@ -50,7 +50,7 @@ MonoBehaviour:
   soldierMoveSpeed: 0.55
   verticalRouteOffset: 0.1
   fromEnemyActionCooldown: 5
-  toEnemyActionCooldown: 12
+  toEnemyActionCooldown: 8
   catapultCooldownZeroLevel: 2
   catapultCooldownFirstLevel: 1.5
   catapultCooldownSecondLevel: 1
@@ -66,4 +66,5 @@ MonoBehaviour:
   mainAudioPrefab: {fileID: 7754931142165485283, guid: 92f222551df25304484925d7671dc6f5, type: 3}
   blueSoldierDestructSound: {fileID: 8300000, guid: 97310afad3ff7fb469094341c4332680, type: 3}
   redSoldierDestructSound: {fileID: 8300000, guid: a4a785810f02fda4db41a92e6d6a1aa0, type: 3}
+  mainTheme: {fileID: 8300000, guid: f8a3ec09811b39f439cae349e5a5d70c, type: 3}
   soldierDestructAudioCooldown: 0.3

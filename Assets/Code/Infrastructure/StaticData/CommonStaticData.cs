@@ -42,6 +42,7 @@ namespace Code.Infrastructure.StaticData
         public EntityBehaviour mainAudioPrefab;
         public AudioClip blueSoldierDestructSound;
         public AudioClip redSoldierDestructSound;
+        public AudioClip mainTheme;
         public float soldierDestructAudioCooldown;
     }
 }
